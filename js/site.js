@@ -1,11 +1,8 @@
-// Three small jobs every page shares. None of them is load-bearing: with this
-// file missing, the phone menu still opens, the forms still check themselves,
-// and the footer year says whatever the HTML says.
+// Three small jobs every page shares. The site still works without this file:
+// the menu opens, the forms check themselves, the year says what the HTML says.
 
-// 1. THE PHONE MENU is a <details>, so it opens and closes with no script at
-//    all. What it cannot do alone is close when you tap somewhere else or
-//    press Escape — which is what every menu on the web has taught people to
-//    expect.
+// 1. THE PHONE MENU is a <details>, which opens with no script. This adds
+//    closing it when you tap away or press Escape.
 document.addEventListener('click', (event) => {
   document.querySelectorAll('details.dropdown[open]').forEach((menu) => {
     if (!menu.contains(event.target)) menu.removeAttribute('open');
@@ -24,13 +21,8 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// 3. DEMO FORMS. A form marked data-demo has nowhere to send yet, so instead of
-//    reloading the page it shows its thank-you message ([data-sent]).
-//
-//    The browser checks `required` and `type="email"` BEFORE it fires submit,
-//    so by the time this runs the form is already valid. When you connect a
-//    real service, give the form its action and delete data-demo — this code
-//    then leaves it alone.
+// 3. DEMO FORMS show their thank-you message ([data-sent]) instead of sending.
+//    To make one real, give the <form> an action and delete data-demo.
 document.querySelectorAll('form[data-demo]').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();

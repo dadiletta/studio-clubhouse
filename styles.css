@@ -1,10 +1,5 @@
-/* Your own rules. This file loads AFTER Tailwind and daisyUI, so anything you
- * write here wins a tie.
- *
- * Keep it short. If you are writing a lot of CSS here, check whether a utility
- * class already does it — that is what Unit 2 was for. The rules below are the
- * ones utilities genuinely cannot express.
- */
+/* Your own rules. This file loads after Tailwind and daisyUI, so it wins a tie.
+ * Reach for a utility class first; write CSS here when no utility can do it. */
 
 /* ============================================================ PALETTE
  *
@@ -21,16 +16,9 @@
  *   accent    #______   a second accent, if you need one at all
  */
 
-/* Redeclare the theme's slots to make them yours. Everything that asked for
- * `primary` follows, and you never touch the markup.
- *
- * Change `night` to whichever theme you set on <html> — in every page.
- *
- * THE TRAP: a school color is often a dark navy or a deep red, and white text
- * on it is fine while black text on it is not. `--color-primary-content` is the
- * text color that rides on top of `--color-primary`. Set both, together, and
- * measure the pair.
- */
+/* Redeclare the theme's colors here to make them yours. Change `night` to the
+ * theme on <html>, in every page. Set --color-primary-content with your primary
+ * and measure the pair: a navy school color often takes white text, not black. */
 [data-theme='night'] {
   /* --color-primary: #______; */
   /* --color-primary-content: #______; */
@@ -39,13 +27,8 @@
 
 /* ============================================================ TYPE
  *
- * Two faces at most. Team sites lean on a condensed, heavy face for headings —
- * that is where the shouting lives — and something plain for body text. This
- * starter ships Oswald over Inter, both free under the SIL Open Font License.
- *
- * To change them: pick two at fonts.google.com, replace the Google Fonts
- * <link> in the <head> of EVERY page, then the two names below.
- */
+ * Two faces at most: Oswald for headings, Inter for body. To change them,
+ * replace the Google Fonts <link> in the <head> of every page, then the names below. */
 body {
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -56,28 +39,17 @@ body {
 
 /* ============================================================ HERO VIDEO
  *
- * Four rules, and they are load-bearing. js/hero-video.js explains the order
- * things load in; this is what makes any of it look like anything.
- */
+ * Load-bearing. js/hero-video.js decides when the video shows; these rules place it. */
 
-/* The stage is the positioning context everything below hangs off.
- *
- * NO `overflow: hidden` HERE, and that is deliberate. The oversized video needs
- * clipping, but .hero-poster below already does that job — it is inset: 0 with
- * its own overflow: hidden, so the iframe cannot escape it. Putting a second
- * copy on the stage clips the NEXT GAME card instead, which is the one thing in
- * this hero that is *supposed* to cross the bottom edge. */
+/* No overflow: hidden on the stage: .hero-poster already clips the video, and a
+ * second clip here would cut off the next-game card that crosses the bottom edge. */
 .hero-stage {
   position: relative;
 }
 
-/* THE POSTER IS ALWAYS PAINTED. This photograph is the hero when the video is
- * blocked, still loading, on a phone, or withheld for reduced motion — which
- * together is most of the time. Design it as if it were the only thing there.
- * The gradient underneath shows while the photograph downloads.
- *
- * Swap the video? Swap this picture too, for a still from the same footage,
- * so the fade from one to the other reads as one thing. */
+/* The photograph is the hero whenever the video is not: blocked, loading, on a
+ * phone, or reduced motion. Design it as the only thing there. Swap the video,
+ * swap this for a still from the same footage. */
 .hero-poster {
   position: absolute;
   inset: 0;
@@ -90,14 +62,9 @@ body {
   background-position: center 40%;
 }
 
-/* COVER, not contain. A 16:9 video in a box that is not 16:9 has to overflow in
- * one direction; these lines pick which. The two `min-` values are the trick —
- * 177.78vh is 16/9 of the viewport height.
- *
- * THE ZOOM pushes the edges of the player out of sight: YouTube's title bar,
- * its "More videos" strip, and any black bars baked into the video itself.
- * 1.2 is enough for footage shot 16:9, like this drone shot. A widescreen
- * film (2.39:1) needs about 1.36. Swap the video, check the edges, set this. */
+/* Cover, not contain: 177.78vh is 16/9 of the screen's height. --video-zoom crops
+ * YouTube's bars and any black bars in the footage: 1.2 for 16:9 like this clip,
+ * about 1.36 for widescreen film. Swap the video, check the edges, set this. */
 .hero-poster {
   --video-zoom: 1.2;
 }
@@ -119,13 +86,9 @@ body {
   opacity: 1;
 }
 
-/* THE SCRIM is why the headline is readable over moving pictures. Do not
- * lighten it without measuring: white text needs 4.5:1 against the BRIGHTEST
- * frame of your video, and a video has a lot of frames. MEASURE THE LIGHTEST
- * STOP, not an average — this gradient's is the 60% at the top, where white
- * text over a pure white frame sits at 5.7:1. It reaches 8.5:1 by 40% down and
- * 17.6:1 at the foot, where the extra weight is carrying the card that
- * overlaps the edge. */
+/* The scrim makes the headline readable. White text needs 4.5:1 against the
+ * video's brightest frame; the lightest stop, 60% at the top, measures 5.7:1 over
+ * pure white. Lighten it only if you measure that stop. */
 .hero-scrim {
   position: absolute;
   inset: 0;
@@ -133,8 +96,7 @@ body {
   background: linear-gradient(to bottom, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.7) 40%, rgb(0 0 0 / 0.9));
 }
 
-/* The other pages' headers carry the same photograph, faded almost to
- * nothing. Enough to say "same team", not enough to fight the title. */
+/* The other pages' headers: the same photograph, faded almost to nothing. */
 .page-header-photo {
   position: absolute;
   inset: 0;
@@ -144,10 +106,8 @@ body {
 
 /* ============================================================ FILTERS
  *
- * The schedule's Home/Away buttons and the roster's positions. Each is a set
- * of radio buttons; :has() lets a rule ask "is that radio checked?" and hide
- * things elsewhere on the page. No JavaScript, and the buttons still work with
- * a keyboard because they are real form controls. */
+ * The schedule's Home/Away and the roster's positions are radio buttons; :has()
+ * hides what isn't picked. No JavaScript, and they work from a keyboard. */
 main:has(#show-home:checked) tr[data-venue='away'],
 main:has(#show-away:checked) tr[data-venue='home'] {
   display: none;
@@ -159,8 +119,7 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   display: none;
 }
 
-/* The number panel on each player card: the shirt number, big, on a stripe of
- * the team color. */
+/* The number panel on each player card: the shirt number on the team color. */
 .player-number {
   background:
     linear-gradient(135deg, transparent 0 55%, color-mix(in oklch, var(--color-primary) 22%, transparent) 55% 70%, transparent 70%),
@@ -169,25 +128,19 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
 
 /* ============================================================ EVERYTHING ELSE */
 
-/* FOOTER HEADINGS AT FULL STRENGTH. daisyUI fades `.footer-title` to 60%. On
- * `night` that measured 4.80:1 — a pass by a hair, and the first thing to fail
- * when you change the theme (on `coffee` it is 3.48:1). Unfaded it is 11.6:1.
- * The capitals and the letter-spacing already say "this is a label". */
+/* Footer headings at full strength. daisyUI's fade passes on `night` by a hair
+ * (4.80:1) and fails on other themes. Keep this rule. */
 .footer-title {
   opacity: 1;
 }
 
-/* The page you are on, marked in the nav by aria-current="page" — which is
- * also what a screen reader announces. daisyUI already paints it as the
- * active item, in the theme's own neutral pair; this only adds weight. Do not
- * recolor the text without measuring it against that neutral: primary on it
- * failed on `corporate`, whose neutral is black. */
+/* The page you are on (aria-current). Measure before you recolor it against the
+ * theme's neutral. */
 .menu a[aria-current='page'] {
   font-weight: 700;
 }
 
-/* SKIP LINK. The first thing a keyboard user reaches, and invisible until
- * they do. It jumps past the nav to <main id="main">. Keep it. */
+/* The skip link: off-screen until a keyboard user tabs to it. Keep it. */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -208,9 +161,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Some readers' systems ask for less movement — a vestibular condition, or just
- * a preference. Honor it: no smooth scroll, no fading video in, no zooming
- * photographs. Keep this. */
+/* Less movement for readers whose system asks for it: no smooth scroll, no video
+ * fade, no zoom. Keep this block. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -26,10 +26,8 @@
 
     <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
-        <!--
-          THE MARK. A monogram in a colored square is a real logo move and it
-          costs nothing — swap it for the logo package you build in Unit 5.
-        -->
+        <!-- The mark: a monogram in a colored square. Swap it for your Unit 5 logo,
+             and img/favicon.svg with it. -->
         <a class="flex items-center gap-3" href="index.html">
           <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
           <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
@@ -63,21 +61,14 @@
     </header>
 
     <main id="main" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
-      <!--
-        BEFORE YOU PUT REAL FACES HERE. A photograph of somebody under 18 on a
-        public website is not a design decision. Ask them, ask the school, and
-        if either answer is no, use the number instead of the face — which is
-        what these cards do already, and they look fine.
-      -->
+      <!-- REAL FACES: a photo of anyone under 18 needs their yes and the
+           school's. If either is no, keep the number, as these cards do. -->
       <section class="mb-24">
         <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
           <h2 class="font-display text-4xl font-bold uppercase">Players</h2>
-          <!--
-            THE SAME NO-JAVASCRIPT FILTER as the schedule's: radio buttons, and
-            :has() rules in styles.css that hide every card whose data-pos does
-            not match. These are soccer positions — rename them for your sport,
-            here AND in styles.css AND in each card's data-pos.
-          -->
+          <!-- The filter: radio buttons and :has() rules in styles.css, no
+               JavaScript. Rename a position here, in styles.css and in each card's
+               data-pos. -->
           <fieldset class="flex flex-wrap gap-2">
             <legend class="sr-only">Show position</legend>
             <input class="btn btn-sm" type="radio" name="pos" id="pos-all" aria-label="Everyone" checked />
@@ -89,12 +80,8 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <!--
-            ONE CARD, REPEATED. Get the first one right, then copy it. If you
-            find yourself changing eight cards by hand to try a layout, you
-            have found the reason Unit 8 introduces a build step.
-            data-pos is what the filter above reads.
-          -->
+          <!-- ONE CARD, REPEATED: get the first right, then copy it. data-pos is
+               what the filter reads. -->
           <article class="player card bg-base-200 overflow-hidden" data-pos="fwd">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">7</span>
@@ -212,10 +199,7 @@
         </div>
       </section>
 
-      <!--
-        JOIN US. A team site's second audience is the next season's players.
-        Tell them how to try out, or delete this.
-      -->
+      <!-- JOIN US: tell next season's players how to try out, or delete this. -->
       <section class="rounded-box bg-base-200 p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div class="md:col-span-2">
           <h2 class="font-display text-3xl md:text-4xl font-bold uppercase mb-3">Want to play?</h2>
@@ -225,11 +209,7 @@
       </section>
     </main>
 
-    <!--
-      SPONSORS. Names, not gray rectangles labeled "logo". If the team has
-      none, delete the band — an empty "our partners" row reads as a team
-      nobody backs.
-    -->
+    <!-- SPONSORS: real names only. None? Delete the band. -->
     <section class="bg-base-200 border-y border-base-content/10" aria-label="Sponsors">
       <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
         <h2 class="text-xs font-bold uppercase tracking-widest w-full sm:w-auto text-center">With thanks to</h2>
@@ -249,7 +229,8 @@
           </a>
           <p class="mt-4 opacity-80 max-w-xs">The sport, the league, the town. One line.</p>
           <div class="flex gap-2 mt-5">
-            <!-- A social link needs a name a screen reader can say. The icon is not one. -->
+            <!-- A social link needs a name a screen reader can say. The icon is not
+                 one. -->
             <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
             <a class="btn btn-ghost btn-square btn-sm" href="https://www.youtube.com/" aria-label="YouTube"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
           </div>
@@ -270,11 +251,8 @@
             <p><a class="link link-hover" href="schedule.html#venue">Your Field, Your City</a></p>
           </address>
         </div>
-        <!--
-          THE SIGNUP. data-demo means js/site.js catches it and says thank you
-          instead of sending it anywhere. Point `action` at a real service and
-          remove data-demo, or delete this block.
-        -->
+        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+             a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">Game-day reminders</h2>
           <label class="sr-only" for="news-email">Email address</label>
@@ -287,12 +265,8 @@
         </form>
       </div>
 
-      <!--
-        CREDITS. Every borrowed thing: creator, source, license, and what you
-        changed. One list for the whole site, the same on every page. When you
-        swap a picture, swap its line. Photographs of minors need more than a
-        credit; ask before you post one.
-      -->
+      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+           Swap a picture, swap its line. A photo of a minor needs permission first. -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
           <p class="opacity-80">© <span data-year>20XX</span> Your team. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>

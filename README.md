@@ -12,12 +12,14 @@ That difference is the point. A team handed a finished site rearranges it. A
 team handed a real structure builds one.
 
 ```
-index.html         hero (video) · next game · record · fixtures and results · news · story · sponsors
+index.html         hero (video) · next game · record · fixtures and results · news · matchday carousel · story · sponsors
+index-2.html       another home: the nav over a photo slider. Keep one home
+elements.html      the parts page: copy what you want, then delete it
 schedule.html      the season as a real table, a Home/Away filter, ticket tiers, the venue and a map
 roster.html        players by number with a position filter, coaches, how to try out
-styles.css         your palette, your type, the hero video, the filters
+styles.css         your palette, your type, the hero video, the filters, the carousels, the nav over the hero
 js/hero-video.js   the video, and what happens when YouTube is blocked
-js/site.js         the phone menu, the footer year, and the demo signup
+js/site.js         the phone menu, the footer year, the demo signup, the carousels, the nav over the hero
 img/               the photographs, and favicon.svg (the icon in the browser tab)
 AGENTS.md          what AI help may and may not do on this project
 ```
@@ -62,6 +64,38 @@ AGENTS.md          what AI help may and may not do on this project
 - **A map** of the venue, from OpenStreetMap: free, no account, no key.
 - **A skip link**, the first thing a keyboard user reaches. Press Tab on any
   page to see it.
+
+## Two home pages and a box of parts
+
+A professional template ships more than one home page, and a page of
+"elements": every part it has, working, so you can see them before you choose.
+This one does too.
+
+- **`index-2.html`** is the same site with a different top: the nav sits over a
+  full-screen photo slider and turns solid as you scroll. See it at
+  <https://dadiletta.github.io/studio-clubhouse/index-2.html>. **Keep one home, not both**: delete the other and name
+  the keeper `index.html`.
+- **`elements.html`** is the parts page: a photo slider, a quote carousel,
+  tabs, pricing, a team, a timeline, steps, a photo wall, a call to action on a
+  photo, and questions. Its nav is a part too, the centered one. See it at
+  <https://dadiletta.github.io/studio-clubhouse/elements.html>. Each part sits between a `COPY FROM HERE` and a
+  `TO HERE` comment: copy what you want into your pages, then **delete
+  `elements.html`** before you hand in. Nothing links to it.
+
+### How the carousels work
+
+A carousel is daisyUI's `carousel`: a row that scrolls sideways and snaps to
+each slide, with **no script at all**. Swipe it, or scroll it with a trackpad.
+`js/site.js` adds the rest to anything marked `data-carousel`: the arrows
+(`data-prev`, `data-next`), one dot per stop (`data-dots`), and, with
+`data-autoplay="7000"`, turning every seven seconds. Those buttons stay hidden
+until the script runs (`data-carousel-controls hidden`), because a button that
+does nothing is worse than none.
+
+A slider that turns by itself has to stop for people: it holds while the
+pointer or the keyboard is on it, it has a pause button, and for anyone whose
+computer asks for less motion it never turns at all. Keep all three. Add or
+remove slides freely; every slide is one element inside the `carousel`.
 
 ## How the video hero works
 

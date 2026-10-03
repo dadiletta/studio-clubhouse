@@ -126,6 +126,72 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     linear-gradient(to bottom right, var(--color-base-300), var(--color-neutral));
 }
 
+/* ============================================================ CAROUSELS
+ *
+ * daisyUI's .carousel is a sideways scroller that snaps to each slide. js/site.js
+ * adds the arrows and dots; these rules dress them. */
+[data-carousel] .carousel {
+  position: relative; /* site.js measures each slide from here */
+  scrollbar-width: none;
+}
+[data-carousel] .carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+.carousel-dot[aria-current='true'] {
+  opacity: 1;
+  width: 1.75rem;
+}
+
+/* A slide's words sit on its photo, so the scrim does what .hero-scrim does on
+ * the home page: 65% black or more behind white text. Lighten it only if you
+ * measure. The pause button shows play while it is paused. */
+.slide-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.65) 45%, rgb(0 0 0 / 0.85));
+}
+[data-pause] .i-play,
+[data-pause][aria-pressed='true'] .i-pause {
+  display: none;
+}
+[data-pause][aria-pressed='true'] .i-play {
+  display: block;
+}
+
+/* ============================================================ NAV OVER THE HERO
+ *
+ * index-2.html's nav: white on the photo, then the page's own colors once the
+ * photo has scrolled under it (.is-solid, set by js/site.js). */
+.nav-over {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  z-index: 30;
+  color: #fff;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.55), transparent);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.nav-over.is-fixed {
+  position: fixed;
+}
+.nav-over.is-solid {
+  color: var(--color-base-content);
+  background: color-mix(in oklch, var(--color-base-100) 92%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 color-mix(in oklch, var(--color-base-content) 12%, transparent);
+}
+.nav-over .dropdown-content {
+  color: var(--color-base-content);
+}
+
 /* ============================================================ EVERYTHING ELSE */
 
 /* Footer headings at full strength. daisyUI's fade passes on `night` by a hair

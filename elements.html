@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elements — Clubhouse</title>
+    <meta name="description" content="One sentence about this team. Search results show it; write it." />
+
+    <!-- What a link preview shows in a chat. Once you publish, add
+         <meta property="og:image" content="https://you.github.io/your-repo/img/stadium-night.jpg" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Clubhouse — change this to your team" />
+    <meta property="og:description" content="One sentence about this team. Search results show it; write it." />
+
+    <!-- Tailwind and daisyUI, no build step. Open this file with Live Server.
+         Tailwind's browser build is for development only; Unit 8 replaces it.
+         Then the font, the tab icon, and your own styles.css last, so it wins. -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-base-100 text-base-content">
+    <!-- A PARTS PAGE, like the "elements" page every professional template ships.
+         Nothing links here: browse it, copy the parts you want into your pages
+         (each sits between COPY FROM HERE and TO HERE), then delete this page. -->
+    <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
+
+    <!-- THE NAV, centered: the name in the middle, the links split either side.
+         To use it, put it in place of the nav at the top of every page. -->
+    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+      <div class="navbar-start">
+        <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+        <details class="dropdown md:hidden">
+          <summary class="btn btn-ghost btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+          <ul class="menu dropdown-content bg-base-200 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="roster.html">Roster</a></li>
+          </ul>
+        </details>
+      </div>
+      <div class="navbar-center">
+        <a class="flex items-center gap-3" href="index.html">
+          <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
+          <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
+        </a>
+      </div>
+      <div class="navbar-end gap-2">
+        <ul class="menu menu-horizontal hidden lg:flex gap-1 text-base">
+          <li><a href="roster.html">Roster</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="bg-base-200 border-b border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+          <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Template parts</p>
+          <h1 class="font-display uppercase text-5xl md:text-7xl font-bold mb-4">Elements</h1>
+          <p class="text-lg opacity-80 max-w-2xl mb-8">Every part on this page works in this theme and in any other. The nav above is one of them: the centered one. The nav that sits over a photo is on <a class="link link-primary" href="index-2.html">the other home page</a>.</p>
+          <ul class="flex flex-wrap gap-2" aria-label="Parts on this page">
+          <li><a class="btn btn-sm btn-soft" href="#slider">Image slider</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#quotes">Quote carousel</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#tabs">Tabs</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#tiers">Pricing</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#team">Team</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#timeline">Timeline</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#steps">Steps</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#gallery">Photo wall</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#cta">Call to action on a photo</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#faq">Questions</a></li>
+          </ul>
+        </div>
+      </header>
+      <div id="slider" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">01 · Image slider</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">A framed photo slider: arrows on the photo, dots under it. Every slide is one figure.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: IMAGE SLIDER -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-label="Matchday in photographs">
+        <div class="relative" data-carousel>
+          <div class="carousel w-full rounded-box shadow-2xl" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Matchday in photographs">
+            <figure class="carousel-item relative w-full" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <img class="w-full aspect-[16/9] object-cover" src="img/stadium-night.jpg" width="1920" height="1080" loading="lazy" alt="The team on the touchline under floodlights" />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent text-white px-6 pt-16 pb-6 text-lg">Under the lights. Say which game this was.</figcaption>
+            </figure>
+            <figure class="carousel-item relative w-full" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <img class="w-full aspect-[16/9] object-cover" src="img/crowd-wide.jpg" width="1920" height="1080" loading="lazy" alt="A packed home stand at a night game" />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent text-white px-6 pt-16 pb-6 text-lg">The home end, full.</figcaption>
+            </figure>
+            <figure class="carousel-item relative w-full" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <img class="w-full aspect-[16/9] object-cover" src="img/floodlights-wide.jpg" width="1920" height="1080" loading="lazy" alt="Floodlights over the pitch before kickoff" />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent text-white px-6 pt-16 pb-6 text-lg">An hour before kickoff.</figcaption>
+            </figure>
+          </div>
+          <div class="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none" data-carousel-controls hidden>
+            <button class="btn btn-circle pointer-events-auto" type="button" data-prev aria-label="Previous photo"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button class="btn btn-circle pointer-events-auto" type="button" data-next aria-label="Next photo"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+          <div class="flex justify-center gap-2 mt-6" data-dots></div>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: IMAGE SLIDER -->
+      <div id="quotes" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">02 · Quote carousel</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">One quote at a time, turning every 8 seconds, with a pause button.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: QUOTE CAROUSEL -->
+      <section class="bg-base-200 px-6 py-20 md:py-28" aria-labelledby="quotes-title">
+        <div class="max-w-4xl mx-auto" data-carousel data-autoplay="8000">
+          <div class="flex flex-col items-center text-center mb-10">
+            <span class="text-primary mb-4"><svg class="size-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+            <h2 id="quotes-title" class="font-display text-3xl md:text-4xl font-bold">Why people play here</h2>
+          </div>
+          <div class="carousel w-full" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Why people play here">
+            <figure class="carousel-item box-border w-full flex-col items-center text-center px-2 md:px-16" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <blockquote class="font-display text-2xl md:text-4xl leading-snug mb-8">One sentence a player actually said about this club.</blockquote>
+              <figcaption class="flex items-center gap-3">
+                <span class="grid place-items-center size-12 rounded-full bg-primary text-primary-content font-bold" aria-hidden="true">AB</span>
+                <span class="text-left"><strong class="block">Their name</strong><span class="text-sm opacity-80">Midfield, since 20XX</span></span>
+              </figcaption>
+            </figure>
+            <figure class="carousel-item box-border w-full flex-col items-center text-center px-2 md:px-16" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <blockquote class="font-display text-2xl md:text-4xl leading-snug mb-8">One from a parent. What changed for their kid?</blockquote>
+              <figcaption class="flex items-center gap-3">
+                <span class="grid place-items-center size-12 rounded-full bg-primary text-primary-content font-bold" aria-hidden="true">CD</span>
+                <span class="text-left"><strong class="block">Their name</strong><span class="text-sm opacity-80">Parent of a junior</span></span>
+              </figcaption>
+            </figure>
+            <figure class="carousel-item box-border w-full flex-col items-center text-center px-2 md:px-16" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <blockquote class="font-display text-2xl md:text-4xl leading-snug mb-8">One from a fan who never misses a home game.</blockquote>
+              <figcaption class="flex items-center gap-3">
+                <span class="grid place-items-center size-12 rounded-full bg-primary text-primary-content font-bold" aria-hidden="true">EF</span>
+                <span class="text-left"><strong class="block">Their name</strong><span class="text-sm opacity-80">Season ticket holder</span></span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="flex items-center justify-center gap-4 mt-10" data-carousel-controls hidden>
+            <button class="btn btn-circle btn-ghost btn-sm" type="button" data-prev aria-label="Previous quote"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <div class="flex items-center gap-2" data-dots></div>
+            <button class="btn btn-circle btn-ghost btn-sm" type="button" data-next aria-label="Next quote"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button class="btn btn-circle btn-ghost btn-sm" type="button" data-pause aria-pressed="false" aria-label="Pause the slides"><svg class="size-4 i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><svg class="size-4 i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></button>
+          </div>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: QUOTE CAROUSEL -->
+      <div id="tabs" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">03 · Tabs</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Three panels in the space of one, and no script.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: TABS -->
+      <section class="max-w-4xl mx-auto px-6 py-12" aria-labelledby="tabs-title">
+        <h2 id="tabs-title" class="font-display uppercase text-3xl md:text-4xl font-bold mb-8">Teams</h2>
+        <!-- Tabs with no script: each is a radio button, and the checked one shows
+             the panel after it. Same name="" on every tab in one set. -->
+        <div class="tabs tabs-lift">
+          <input type="radio" name="parts-tabs" class="tab text-base" aria-label="Seniors" checked />
+          <div class="tab-content bg-base-100 border-base-content/10 p-6 md:p-8">
+            <ul>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Training</span><span class="font-semibold">Tue & Thu, 7pm</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Home games</span><span class="font-semibold">Saturdays</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Coach</span><span class="font-semibold">Their name</span></li>
+            </ul>
+          </div>
+          <input type="radio" name="parts-tabs" class="tab text-base" aria-label="Juniors" />
+          <div class="tab-content bg-base-100 border-base-content/10 p-6 md:p-8">
+            <ul>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Training</span><span class="font-semibold">Wednesdays, 5pm</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Ages</span><span class="font-semibold">8–16</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Coach</span><span class="font-semibold">Their name</span></li>
+            </ul>
+          </div>
+          <input type="radio" name="parts-tabs" class="tab text-base" aria-label="Women's" />
+          <div class="tab-content bg-base-100 border-base-content/10 p-6 md:p-8">
+            <ul>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Training</span><span class="font-semibold">Mon & Thu, 7pm</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Home games</span><span class="font-semibold">Sundays</span></li>
+              <li class="flex items-baseline justify-between gap-6 py-3 border-b border-base-content/10"><span>Coach</span><span class="font-semibold">Their name</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: TABS -->
+      <div id="tiers" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">04 · Pricing</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Three choices side by side, the middle one lifted.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: PRICING -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="tiers-title">
+        <div class="max-w-2xl mb-14">
+          <h2 id="tiers-title" class="font-display uppercase text-3xl md:text-5xl font-bold mb-4">Season tickets</h2>
+          <p class="text-lg opacity-80">Three ways to back the team. Say what each costs, and what it gets you.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <article class="card bg-base-100 border border-base-content/10 relative">
+            
+            <div class="card-body gap-4">
+              <h3 class="card-title font-display uppercase text-2xl">Single</h3>
+              <p><span class="font-display uppercase text-5xl font-bold">$00</span> <span class="opacity-80">a season</span></p>
+              <p class="opacity-90">Every home game, one seat.</p>
+              <ul class="space-y-2 my-2">
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every home game</li>
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Your name on the wall</li>
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Cup games extra</li>
+              </ul>
+              <a class="btn btn-primary btn-outline mt-auto" href="schedule.html#tickets">Buy one</a>
+            </div>
+          </article>
+          <article class="card bg-primary text-primary-content shadow-2xl md:-translate-y-4 relative">
+            <span class="badge badge-neutral absolute -top-3 left-6">Most popular</span>
+            <div class="card-body gap-4">
+              <h3 class="card-title font-display uppercase text-2xl">Family</h3>
+              <p><span class="font-display uppercase text-5xl font-bold">$00</span> <span class="opacity-80">a season</span></p>
+              <p class="opacity-90">Two adults and up to three kids.</p>
+              <ul class="space-y-2 my-2">
+              <li class="flex gap-3"><svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every home game, five seats</li>
+              <li class="flex gap-3"><svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> A team photo, signed</li>
+              <li class="flex gap-3"><svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Cup games included</li>
+              </ul>
+              <a class="btn btn-neutral mt-auto" href="schedule.html#tickets">Buy the family ticket</a>
+            </div>
+          </article>
+          <article class="card bg-base-100 border border-base-content/10 relative">
+            
+            <div class="card-body gap-4">
+              <h3 class="card-title font-display uppercase text-2xl">Supporter</h3>
+              <p><span class="font-display uppercase text-5xl font-bold">$00</span> <span class="opacity-80">a season</span></p>
+              <p class="opacity-90">For people who want to give more.</p>
+              <ul class="space-y-2 my-2">
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Everything in Family</li>
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> A match-ball sponsor</li>
+              <li class="flex gap-3"><svg class="size-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dinner with the squad</li>
+              </ul>
+              <a class="btn btn-primary btn-outline mt-auto" href="schedule.html#tickets">Become a supporter</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: PRICING -->
+      <div id="team" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">05 · Team</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">People, four across, two on a phone.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: TEAM -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="team-title">
+        <h2 id="team-title" class="font-display uppercase text-3xl md:text-5xl font-bold mb-12 text-center">The coaches</h2>
+        <!-- Initials until you have photos you may use. Then an <img> with the
+             person's name as its alt replaces the inner div. -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <article class="text-center">
+            <div class="avatar avatar-placeholder mb-4">
+              <div class="bg-primary text-primary-content w-28 rounded-full">
+                <span class="text-3xl font-bold" aria-hidden="true">HC</span>
+              </div>
+            </div>
+            <h3 class="font-display uppercase text-xl font-bold">Their name</h3>
+            <p class="text-primary font-semibold text-sm mb-2">Head coach</p>
+            <p class="opacity-80 text-sm">One line: their last club.</p>
+          </article>
+          <article class="text-center">
+            <div class="avatar avatar-placeholder mb-4">
+              <div class="bg-secondary text-secondary-content w-28 rounded-full">
+                <span class="text-3xl font-bold" aria-hidden="true">AC</span>
+              </div>
+            </div>
+            <h3 class="font-display uppercase text-xl font-bold">Their name</h3>
+            <p class="text-primary font-semibold text-sm mb-2">Assistant</p>
+            <p class="opacity-80 text-sm">One line: what they work on.</p>
+          </article>
+          <article class="text-center">
+            <div class="avatar avatar-placeholder mb-4">
+              <div class="bg-accent text-accent-content w-28 rounded-full">
+                <span class="text-3xl font-bold" aria-hidden="true">GK</span>
+              </div>
+            </div>
+            <h3 class="font-display uppercase text-xl font-bold">Their name</h3>
+            <p class="text-primary font-semibold text-sm mb-2">Goalkeeping</p>
+            <p class="opacity-80 text-sm">One line: their own playing days.</p>
+          </article>
+          <article class="text-center">
+            <div class="avatar avatar-placeholder mb-4">
+              <div class="bg-neutral text-neutral-content w-28 rounded-full">
+                <span class="text-3xl font-bold" aria-hidden="true">JC</span>
+              </div>
+            </div>
+            <h3 class="font-display uppercase text-xl font-bold">Their name</h3>
+            <p class="text-primary font-semibold text-sm mb-2">Juniors</p>
+            <p class="opacity-80 text-sm">One line: why they coach kids.</p>
+          </article>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: TEAM -->
+      <div id="timeline" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">06 · Timeline</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Dates down the middle, alternating sides; on a phone, one side.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: TIMELINE -->
+      <section class="max-w-4xl mx-auto px-6 py-12" aria-labelledby="timeline-title">
+        <h2 id="timeline-title" class="font-display uppercase text-3xl md:text-5xl font-bold mb-12 text-center">Club history</h2>
+        <ul class="timeline timeline-snap-icon timeline-vertical">
+          <li>
+            
+            <div class="timeline-middle">
+              <span class="block size-4 rounded-full bg-primary" aria-hidden="true"></span>
+            </div>
+            <div class="timeline-start text-end mb-10">
+              <time class="font-mono text-sm opacity-80">19XX</time>
+              <p class="font-display uppercase text-xl font-bold">Founded</p>
+              <p class="opacity-80">Who started it, and where they first played.</p>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <span class="block size-4 rounded-full bg-primary" aria-hidden="true"></span>
+            </div>
+            <div class="timeline-end mb-10">
+              <time class="font-mono text-sm opacity-80">19XX</time>
+              <p class="font-display uppercase text-xl font-bold">First trophy</p>
+              <p class="opacity-80">What it was, and who scored.</p>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <span class="block size-4 rounded-full bg-primary" aria-hidden="true"></span>
+            </div>
+            <div class="timeline-start text-end mb-10">
+              <time class="font-mono text-sm opacity-80">20XX</time>
+              <p class="font-display uppercase text-xl font-bold">A home of our own</p>
+              <p class="opacity-80">The ground, and how it was paid for.</p>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <span class="block size-4 rounded-full bg-primary" aria-hidden="true"></span>
+            </div>
+            <div class="timeline-end mb-10">
+              <time class="font-mono text-sm opacity-80">Now</time>
+              <p class="font-display uppercase text-xl font-bold">This season</p>
+              <p class="opacity-80">One honest sentence.</p>
+            </div>
+            
+          </li>
+        </ul>
+      </section>
+      <!-- ==================================================== TO HERE: TIMELINE -->
+      <div id="steps" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">07 · Steps</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">A process in order: across on a wide screen, down on a phone.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: STEPS -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="steps-title">
+        <h2 id="steps-title" class="font-display uppercase text-3xl md:text-5xl font-bold mb-12 text-center">How to join</h2>
+        <ol class="steps steps-vertical md:steps-horizontal w-full">
+          <li class="step step-primary">
+            <span class="block mt-2 font-semibold">Come to training</span>
+            <span class="block text-sm opacity-80 max-w-[12rem] mx-auto">No sign-up for the first one.</span>
+          </li>
+          <li class="step step-primary">
+            <span class="block mt-2 font-semibold">Meet the coach</span>
+            <span class="block text-sm opacity-80 max-w-[12rem] mx-auto">Ask anything.</span>
+          </li>
+          <li class="step step-primary">
+            <span class="block mt-2 font-semibold">Register</span>
+            <span class="block text-sm opacity-80 max-w-[12rem] mx-auto">The league form, online.</span>
+          </li>
+          <li class="step step-primary">
+            <span class="block mt-2 font-semibold">Play</span>
+            <span class="block text-sm opacity-80 max-w-[12rem] mx-auto">Your first game.</span>
+          </li>
+        </ol>
+      </section>
+      <!-- ==================================================== TO HERE: STEPS -->
+      <div id="gallery" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">08 · Photo wall</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Photos in columns, each keeping its own shape.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: PHOTO WALL -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="gallery-title">
+        <h2 id="gallery-title" class="font-display uppercase text-3xl md:text-5xl font-bold mb-10">On the pitch</h2>
+        <!-- Columns, not a grid: each photo keeps its own shape, like a pinboard. -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+          <img class="w-full rounded-box mb-4 break-inside-avoid" src="img/ball.jpg" width="900" height="563" loading="lazy" alt="A match ball on the grass" />
+          <img class="w-full rounded-box mb-4 break-inside-avoid" src="img/stadium-night.jpg" width="1920" height="1080" loading="lazy" alt="The team under floodlights" />
+          <img class="w-full rounded-box mb-4 break-inside-avoid" src="img/field.jpg" width="900" height="562" loading="lazy" alt="The pitch in daylight" />
+          <img class="w-full rounded-box mb-4 break-inside-avoid" src="img/crowd.jpg" width="1200" height="900" loading="lazy" alt="The home crowd" />
+          <img class="w-full rounded-box mb-4 break-inside-avoid" src="img/floodlights.jpg" width="900" height="562" loading="lazy" alt="Floodlights against the night sky" />
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: PHOTO WALL -->
+      <div id="cta" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">09 · Call to action on a photo</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">The closing ask, over a picture.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: CALL TO ACTION ON A PHOTO -->
+      <section class="relative overflow-hidden my-12" aria-labelledby="cta-title">
+        <img class="absolute inset-0 size-full object-cover" src="img/crowd-wide.jpg" width="1920" height="1080" loading="lazy" alt="" />
+        <div class="slide-scrim"></div>
+        <div class="relative max-w-3xl mx-auto px-6 py-24 md:py-32 text-center text-white">
+          <h2 id="cta-title" class="font-display uppercase text-4xl md:text-6xl font-bold mb-6">Fill the home end</h2>
+          <p class="text-xl mb-10">One sentence. When the next home game is, and what a ticket costs.</p>
+          <a class="btn btn-primary btn-lg" href="schedule.html#tickets">Get tickets</a>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: CALL TO ACTION ON A PHOTO -->
+      <div id="faq" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">10 · Questions</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Open one and the others close.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: QUESTIONS -->
+      <section class="max-w-3xl mx-auto px-6 py-12" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="font-display uppercase text-3xl md:text-4xl font-bold mb-10">Questions</h2>
+        <div class="space-y-3">
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="parts-faq" open>
+            <summary class="collapse-title font-semibold text-lg">Can anyone try out?</summary>
+            <div class="collapse-content opacity-80"><p>Who can, how old, and how good they need to be.</p></div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="parts-faq">
+            <summary class="collapse-title font-semibold text-lg">What does it cost to play?</summary>
+            <div class="collapse-content opacity-80"><p>Fees, kit, and what help there is.</p></div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="parts-faq">
+            <summary class="collapse-title font-semibold text-lg">Where do we park?</summary>
+            <div class="collapse-content opacity-80"><p>Where, how much, and how early to arrive.</p></div>
+          </details>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: QUESTIONS -->
+
+    </main>
+
+    <footer class="bg-base-300 text-base-content">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <a class="flex items-center gap-3" href="index.html">
+            <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
+            <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
+          </a>
+          <p class="mt-4 opacity-80 max-w-xs">The sport, the league, the town. One line.</p>
+          <div class="flex gap-2 mt-5">
+            <!-- A social link needs a name a screen reader can say. The icon is not
+                 one. -->
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.youtube.com/" aria-label="YouTube"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-title">Pages</h2>
+          <ul class="space-y-2">
+            <li><a class="link link-hover" href="index.html">Home</a></li>
+            <li><a class="link link-hover" href="schedule.html">Schedule</a></li>
+            <li><a class="link link-hover" href="roster.html">Roster</a></li>
+            <li><a class="link link-hover" href="schedule.html#tickets">Tickets</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <address class="not-italic space-y-2">
+            <p><a class="link link-hover" href="mailto:coach@example.com">coach@example.com</a></p>
+            <p><a class="link link-hover" href="schedule.html#venue">Your Field, Your City</a></p>
+          </address>
+        </div>
+        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+             a real service and delete data-demo, or delete this block. -->
+        <form data-demo>
+          <h2 class="footer-title">Game-day reminders</h2>
+          <label class="sr-only" for="news-email">Email address</label>
+          <div class="join w-full">
+            <input class="input join-item w-full" type="email" id="news-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <button class="btn btn-primary join-item" type="submit">Sign up</button>
+          </div>
+          <p class="text-sm opacity-80 mt-2">The day before every home game.</p>
+          <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — see you Friday.</p>
+        </form>
+      </div>
+
+      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+           Swap a picture, swap its line. A photo of a minor needs permission first. -->
+      <div class="border-t border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
+          <p class="opacity-80">© <span data-year>20XX</span> Your team. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>
+          <details class="md:max-w-xl">
+            <summary class="cursor-pointer link link-hover opacity-80">Photo and video credits</summary>
+            <ul class="mt-3 space-y-1 opacity-80">
+              <li>Hero video: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. Clipped to 0:01–0:34.</li>
+              <li>Night game: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_night_game_at_Duane_Stadium_at_Merrimack_College.jpg">Kenneth C. Zirkel</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Crowd: <a class="link" href="https://commons.wikimedia.org/wiki/File:Peden_Stadium_at_Night.jpg">NotJamestack</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Ball: <a class="link" href="https://commons.wikimedia.org/wiki/File:Adidas_soccer_ball_on_a_grass_pitch_(Unsplash).jpg">Peter Glaser baraida</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Field: <a class="link" href="https://commons.wikimedia.org/wiki/File:Scudamore_Field_at_NKU_Soccer_Stadium_2024.jpg">Kithira</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Floodlights: <a class="link" href="https://commons.wikimedia.org/wiki/File:Champasak_Stadium_during_at_night_22Jan2026.jpg">AddedUpdatePoster</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+  </body>
+</html>

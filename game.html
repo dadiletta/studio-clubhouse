@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Match report — Clubhouse</title>
+    <meta name="description" content="How the last game went: the score, the moments that decided it, and who played." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Match report — Clubhouse" />
+    <meta property="og:description" content="How the last game went: the score, the moments that decided it, and who played." />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-base-100 text-base-content">
+    <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
+
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+      <div class="navbar-start">
+        <!-- The mark: a monogram in a colored square. Swap it for your Unit 5 logo,
+             and img/favicon.svg with it. -->
+        <a class="flex items-center gap-3" href="index.html">
+          <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
+          <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
+        </a>
+      </div>
+      <div class="navbar-end gap-2">
+        <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="roster.html">Roster</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+        <details class="dropdown dropdown-end md:hidden">
+          <summary class="btn btn-ghost btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+          <ul class="menu dropdown-content bg-base-200 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="roster.html">Roster</a></li>
+          </ul>
+        </details>
+      </div>
+    </nav>
+
+    <!-- THE SCOREBOARD: a match report opens on the result. The h1 names the
+         game; the crests and the big numbers give the score at a glance. -->
+    <header class="relative overflow-hidden bg-base-200 py-14 md:py-20 border-b border-base-content/10">
+      <div class="page-header-photo" aria-hidden="true"></div>
+      <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Match report · <time datetime="20XX-09-27T19:00">Saturday, September 27</time></p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold uppercase mb-10">Your team <span class="opacity-80">vs.</span> Opponent</h1>
+        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-10 max-w-3xl mx-auto" data-reveal="zoom">
+          <div class="grid justify-items-center gap-3">
+            <span class="grid place-items-center size-16 md:size-24 rounded-full bg-primary text-primary-content font-display text-3xl md:text-5xl font-bold" aria-hidden="true">C</span>
+            <span class="font-bold uppercase tracking-widest text-sm">Your team</span>
+          </div>
+          <p class="score font-display text-7xl md:text-9xl font-bold leading-none"><span class="sr-only">Final score: Your team </span>0<span class="opacity-80 mx-2 md:mx-4" aria-hidden="true">–</span><span class="sr-only">, Opponent </span>0</p>
+          <div class="grid justify-items-center gap-3">
+            <span class="grid place-items-center size-16 md:size-24 rounded-full bg-neutral text-neutral-content font-display text-3xl md:text-5xl font-bold" aria-hidden="true">OP</span>
+            <span class="font-bold uppercase tracking-widest text-sm">Opponent</span>
+          </div>
+        </div>
+        <p class="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
+          <span class="badge badge-neutral font-bold uppercase tracking-widest">Full time</span>
+          <span>Your Field</span>
+          <span>Attendance 000</span>
+        </p>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================================================ THE STORY
+           The report itself, beside the facts a fan checks first: the score by
+           period, and who was best. -->
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <article class="lg:col-span-2">
+          <h2 class="font-display text-4xl md:text-5xl font-bold uppercase mb-6">What happened</h2>
+          <p class="text-lg mb-5">The first paragraph is the whole game in two sentences: the score, the moment that decided it, and who made it.</p>
+          <p class="opacity-80 mb-5">Then the game in order. A paragraph for each half is plenty. Name the people who did things, and say what they did; a report that could be about any game is about none.</p>
+          <!-- A pull quote: a real person's real words, with their name. -->
+          <figure class="my-10 border-l-4 border-primary pl-6" data-reveal>
+            <blockquote class="font-display text-2xl md:text-3xl font-bold uppercase leading-snug">“One thing the coach said afterward, in their words.”</blockquote>
+            <figcaption class="mt-3 text-sm opacity-80">A name, head coach</figcaption>
+          </figure>
+          <p class="opacity-80">End on what is next: who they play, and when.</p>
+        </article>
+
+        <aside class="space-y-8" aria-label="The facts">
+          <!-- SCORE BY PERIOD: halves here. Quarters, rounds or sets: one column
+               each. -->
+          <div class="overflow-x-auto rounded-box border border-base-content/10" data-reveal>
+            <table class="table">
+              <caption class="text-left text-xs font-bold uppercase tracking-widest px-4 pt-4 pb-1">Score by half</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Team</th>
+                  <th scope="col" class="text-center">1st</th>
+                  <th scope="col" class="text-center">2nd</th>
+                  <th scope="col" class="text-center">Final</th>
+                </tr>
+              </thead>
+              <tbody class="score">
+                <tr><th scope="row">Your team</th><td class="text-center">0</td><td class="text-center">0</td><td class="text-center font-bold">0</td></tr>
+                <tr><th scope="row">Opponent</th><td class="text-center">0</td><td class="text-center">0</td><td class="text-center font-bold">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PLAYER OF THE MATCH: the number, not the face, unless they and the
+               school have said yes. -->
+          <section class="card bg-base-200 overflow-hidden" aria-labelledby="potm-title" data-reveal>
+            <div class="player-number grid place-items-center aspect-[2/1]">
+              <span class="font-display text-8xl font-bold" aria-hidden="true">10</span>
+            </div>
+            <div class="card-body">
+              <h2 id="potm-title" class="text-xs font-bold uppercase tracking-widest text-primary">Player of the match</h2>
+              <p class="card-title text-2xl">A name</p>
+              <p class="opacity-80">One sentence on why. Something you saw, not something you felt.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- ============================================================ KEY MOMENTS
+           Goals, cards, changes: whatever turned the game, in order. Each minute
+           is a <time> whose datetime is a duration: PT12M is twelve minutes in.
+           data-side="away" puts a moment on the right, theirs. -->
+      <section class="bg-base-200 border-y border-base-content/10" aria-labelledby="moments-title">
+        <div class="max-w-4xl mx-auto px-6 py-20 md:py-24">
+          <h2 id="moments-title" class="font-display text-4xl md:text-5xl font-bold uppercase mb-12 text-center">Key moments</h2>
+          <ol class="moments">
+          <li class="moment" data-side="home" data-reveal="left">
+            <time class="moment-min" datetime="PT12M">12&prime;</time>
+            <div class="moment-body">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary">Goal</p>
+              <p class="font-bold text-lg">A name</p>
+              <p class="text-sm opacity-80">Assisted by A name. One line on how it went in.</p>
+            </div>
+          </li>
+          <li class="moment" data-side="away" data-reveal="right">
+            <time class="moment-min" datetime="PT27M">27&prime;</time>
+            <div class="moment-body">
+              <p class="text-xs font-bold uppercase tracking-widest opacity-80">Yellow card</p>
+              <p class="font-bold text-lg">A name</p>
+              <p class="text-sm opacity-80">One line, if it mattered.</p>
+            </div>
+          </li>
+          <li class="moment-break badge badge-neutral badge-lg font-bold uppercase tracking-widest">Half time · 0–0</li>
+          <li class="moment" data-side="away" data-reveal="right">
+            <time class="moment-min" datetime="PT54M">54&prime;</time>
+            <div class="moment-body">
+              <p class="text-xs font-bold uppercase tracking-widest opacity-80">Goal</p>
+              <p class="font-bold text-lg">A name</p>
+              <p class="text-sm opacity-80">One line on how they got back into it.</p>
+            </div>
+          </li>
+          <li class="moment" data-side="home" data-reveal="left">
+            <time class="moment-min" datetime="PT63M">63&prime;</time>
+            <div class="moment-body">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary">Substitution</p>
+              <p class="font-bold text-lg">A name on</p>
+              <p class="text-sm opacity-80">For A name. One line on why.</p>
+            </div>
+          </li>
+          <li class="moment" data-side="home" data-reveal="left">
+            <time class="moment-min" datetime="PT81M">81&prime;</time>
+            <div class="moment-body">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary">Goal</p>
+              <p class="font-bold text-lg">A name</p>
+              <p class="text-sm opacity-80">The one everyone will talk about.</p>
+            </div>
+          </li>
+          <li class="moment-break badge badge-neutral badge-lg font-bold uppercase tracking-widest">Full time · 0–0</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================ THE NUMBERS
+           Team stats as two bars that meet in the middle, and who played. -->
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <section class="lg:col-span-3" aria-labelledby="stats-title">
+          <h2 id="stats-title" class="font-display text-4xl font-bold uppercase mb-2">Team stats</h2>
+          <!-- Each row's --home and --away are the two teams' shares: 60% and 40%
+               of the shots, say. Change them when you change the numbers. -->
+          <p class="flex justify-between text-sm font-bold uppercase tracking-widest mb-8"><span class="text-primary">Your team</span><span class="opacity-80">Opponent</span></p>
+          <ul class="space-y-6">
+            <li style="--home: 60%; --away: 40%" data-reveal>
+              <p class="grid grid-cols-[3rem_1fr_3rem] items-baseline mb-2">
+                <span class="font-display text-2xl font-bold"><span class="sr-only">Your team: </span>00</span>
+                <span class="text-center text-sm font-bold uppercase tracking-widest">Shots</span>
+                <span class="font-display text-2xl font-bold text-right"><span class="sr-only">Opponent: </span>00</span>
+              </p>
+              <div class="h2h-bar" aria-hidden="true"><span></span><span></span></div>
+            </li>
+            <li style="--home: 65%; --away: 35%" data-reveal>
+              <p class="grid grid-cols-[3rem_1fr_3rem] items-baseline mb-2">
+                <span class="font-display text-2xl font-bold"><span class="sr-only">Your team: </span>00</span>
+                <span class="text-center text-sm font-bold uppercase tracking-widest">On target</span>
+                <span class="font-display text-2xl font-bold text-right"><span class="sr-only">Opponent: </span>00</span>
+              </p>
+              <div class="h2h-bar" aria-hidden="true"><span></span><span></span></div>
+            </li>
+            <li style="--home: 55%; --away: 45%" data-reveal>
+              <p class="grid grid-cols-[3rem_1fr_3rem] items-baseline mb-2">
+                <span class="font-display text-2xl font-bold"><span class="sr-only">Your team: </span>00</span>
+                <span class="text-center text-sm font-bold uppercase tracking-widest">Possession</span>
+                <span class="font-display text-2xl font-bold text-right"><span class="sr-only">Opponent: </span>00</span>
+              </p>
+              <div class="h2h-bar" aria-hidden="true"><span></span><span></span></div>
+            </li>
+            <li style="--home: 70%; --away: 30%" data-reveal>
+              <p class="grid grid-cols-[3rem_1fr_3rem] items-baseline mb-2">
+                <span class="font-display text-2xl font-bold"><span class="sr-only">Your team: </span>00</span>
+                <span class="text-center text-sm font-bold uppercase tracking-widest">Corners</span>
+                <span class="font-display text-2xl font-bold text-right"><span class="sr-only">Opponent: </span>00</span>
+              </p>
+              <div class="h2h-bar" aria-hidden="true"><span></span><span></span></div>
+            </li>
+            <li style="--home: 40%; --away: 60%" data-reveal>
+              <p class="grid grid-cols-[3rem_1fr_3rem] items-baseline mb-2">
+                <span class="font-display text-2xl font-bold"><span class="sr-only">Your team: </span>00</span>
+                <span class="text-center text-sm font-bold uppercase tracking-widest">Fouls</span>
+                <span class="font-display text-2xl font-bold text-right"><span class="sr-only">Opponent: </span>00</span>
+              </p>
+              <div class="h2h-bar" aria-hidden="true"><span></span><span></span></div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="lg:col-span-2 card bg-base-200" aria-labelledby="lineup-title">
+          <div class="card-body">
+            <h2 id="lineup-title" class="font-display text-4xl font-bold uppercase mb-4">Who played</h2>
+            <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Started</h3>
+            <ol class="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">1</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">2</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">3</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">4</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">5</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">6</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">7</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">8</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">9</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">10</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">11</span> A name</li>
+            </ol>
+            <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Came on</h3>
+            <ol class="grid grid-cols-2 gap-x-6 gap-y-2">
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">12</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">14</span> A name</li>
+                <li class="flex gap-3"><span class="font-display font-bold text-primary w-6 text-right">15</span> A name</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <div class="bg-base-200 border-t border-base-content/10">
+      <!-- ============================================================ HIGHLIGHTS
+           A video and the best action shots in one lightbox: open any of them and
+           the arrows step through the rest. The video's link goes to YouTube, so
+           with no script it still plays there. Pick photos where the action is
+           the subject, not somebody's face, and credit every one. -->
+      <section class="max-w-6xl mx-auto px-6 py-20 md:py-28" aria-labelledby="game-highlights-title">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="text-primary font-bold uppercase tracking-widest text-sm mb-3">Highlights</p>
+            <h2 id="game-highlights-title" class="font-display text-4xl md:text-5xl font-bold uppercase">From the game</h2>
+          </div>
+          <a class="link link-primary font-bold inline-flex items-center gap-1" href="schedule.html">Full schedule <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4" data-lightbox>
+          <a class="group relative col-span-2 md:row-span-2 block overflow-hidden rounded-box" href="https://www.youtube.com/watch?v=pGeUEGLOtcA" data-video-popup aria-label="Play the video: the highlights" data-reveal="zoom">
+            <img class="size-full object-cover transition duration-500 group-hover:scale-105" src="img/action-shot.jpg" width="1440" height="788" loading="lazy" alt="" />
+            <span class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></span>
+            <span class="play-pulse absolute inset-0 m-auto grid place-items-center size-20 rounded-full bg-primary text-primary-content shadow-xl transition duration-300 group-hover:scale-110"><svg class="size-8 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></span>
+            <span class="absolute inset-x-5 bottom-5 text-white">
+              <span class="block text-xs font-bold uppercase tracking-widest mb-1">Video</span>
+              <span class="block font-display text-2xl md:text-4xl font-bold uppercase">Watch the highlights</span>
+            </span>
+          </a>
+          <a class="group block overflow-hidden rounded-box" href="img/action-header.jpg" data-reveal><img class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-105" src="img/action-header.jpg" width="1200" height="889" loading="lazy" alt="Two players rising together for a header" /></a>
+          <a class="group block overflow-hidden rounded-box" href="img/action-wide.jpg" data-reveal><img class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-105" src="img/action-wide.jpg" width="1600" height="828" loading="lazy" alt="A midfielder carrying the ball upfield as two defenders close in" /></a>
+          <a class="group block overflow-hidden rounded-box" href="img/action-huddle.jpg" data-reveal><img class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-105" src="img/action-huddle.jpg" width="1200" height="738" loading="lazy" alt="The team in a tight huddle before the start" /></a>
+          <a class="group block overflow-hidden rounded-box" href="img/crowd.jpg" data-reveal><img class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-105" src="img/crowd.jpg" width="1200" height="900" loading="lazy" alt="A full home stand under the lights" /></a>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <!-- ============================================================ NEXT
+         The same ask as every page: the next game. The countdown stays hidden
+         until data-countdown is a real date. -->
+    <section class="bg-primary text-primary-content px-6 py-20 md:py-24">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest mb-3">Next game · Home</p>
+          <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-3">vs. Opponent</h2>
+          <p class="text-lg"><time datetime="20XX-10-04T19:00">Friday, October 4 · 7:00pm</time></p>
+        </div>
+        <div class="grid gap-5 md:justify-items-end">
+          <div class="text-base-content">
+          <!-- THE COUNTDOWN: js/countdown.js counts down to data-countdown, the
+               same moment as the <time> beside it. It stays hidden while the
+               date is a placeholder; write the real one in both. -->
+          <div class="game-countdown" data-countdown="20XX-10-04T19:00" hidden aria-hidden="true">
+            <span data-unit-box><span data-unit="days">00</span><small>Days</small></span>
+            <span data-unit-box><span data-unit="hours">00</span><small>Hrs</small></span>
+            <span data-unit-box><span data-unit="minutes">00</span><small>Min</small></span>
+            <span data-unit-box><span data-unit="seconds">00</span><small>Sec</small></span>
+          </div>
+          </div>
+          <a class="btn btn-lg btn-neutral" href="schedule.html#tickets"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPONSORS: real names only. None? Delete the band. -->
+    <section class="bg-base-200 border-y border-base-content/10" aria-label="Sponsors">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-widest w-full sm:w-auto text-center">With thanks to</h2>
+        <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor One</span>
+        <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor Two</span>
+        <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor Three</span>
+        <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor Four</span>
+      </div>
+    </section>
+
+    <footer class="bg-base-300 text-base-content">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <a class="flex items-center gap-3" href="index.html">
+            <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
+            <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
+          </a>
+          <p class="mt-4 opacity-80 max-w-xs">The sport, the league, the town. One line.</p>
+          <div class="flex gap-2 mt-5">
+            <!-- A social link needs a name a screen reader can say. The icon is not
+                 one. -->
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.youtube.com/" aria-label="YouTube"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-title">Pages</h2>
+          <ul class="space-y-2">
+            <li><a class="link link-hover" href="index.html">Home</a></li>
+            <li><a class="link link-hover" href="schedule.html">Schedule</a></li>
+            <li><a class="link link-hover" href="roster.html">Roster</a></li>
+            <li><a class="link link-hover" href="game.html">Last match report</a></li>
+            <li><a class="link link-hover" href="schedule.html#tickets">Tickets</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <address class="not-italic space-y-2">
+            <p><a class="link link-hover" href="mailto:coach@example.com">coach@example.com</a></p>
+            <p><a class="link link-hover" href="schedule.html#venue">Your Field, Your City</a></p>
+          </address>
+        </div>
+        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+             a real service and delete data-demo, or delete this block. -->
+        <form data-demo>
+          <h2 class="footer-title">Game-day reminders</h2>
+          <label class="sr-only" for="news-email">Email address</label>
+          <div class="join w-full">
+            <input class="input join-item w-full" type="email" id="news-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <button class="btn btn-primary join-item" type="submit">Sign up</button>
+          </div>
+          <p class="text-sm opacity-80 mt-2">The day before every home game.</p>
+          <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — see you Friday.</p>
+        </form>
+      </div>
+
+      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+           Swap a picture, swap its line. A photo of a minor needs permission first. -->
+      <div class="border-t border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
+          <p class="opacity-80">© <span data-year>20XX</span> Your team. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>
+          <details class="md:max-w-xl">
+            <summary class="cursor-pointer link link-hover opacity-80">Photo and video credits</summary>
+            <ul class="mt-3 space-y-1 opacity-80">
+              <li>Hero video and highlights: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. The hero clipped to 0:01–0:34.</li>
+              <li>Night game: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_night_game_at_Duane_Stadium_at_Merrimack_College.jpg">Kenneth C. Zirkel</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Crowd: <a class="link" href="https://commons.wikimedia.org/wiki/File:Peden_Stadium_at_Night.jpg">NotJamestack</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Ball: <a class="link" href="https://commons.wikimedia.org/wiki/File:Adidas_soccer_ball_on_a_grass_pitch_(Unsplash).jpg">Peter Glaser baraida</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Field: <a class="link" href="https://commons.wikimedia.org/wiki/File:Scudamore_Field_at_NKU_Soccer_Stadium_2024.jpg">Kithira</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Floodlights: <a class="link" href="https://commons.wikimedia.org/wiki/File:Champasak_Stadium_during_at_night_22Jan2026.jpg">AddedUpdatePoster</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Night match: <a class="link" href="https://commons.wikimedia.org/wiki/File:DFC_5336_A_tense_moment_as_a_striker_fires_a_shot_on_goal_while_the_goalkeeper_dives_to_make_the_save_during_a_nighttime_amateur_soccer_match.jpg">PattayaPatrol</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Midfield: <a class="link" href="https://commons.wikimedia.org/wiki/File:ODU_v_W%26M_Women%27s_Soccer_(9543090542).jpg">Mobilus In Mobili</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped.</li>
+              <li>Header: <a class="link" href="https://commons.wikimedia.org/wiki/File:HVCC_mens_soccer.jpg">Tritooth</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Huddle: <a class="link" href="https://commons.wikimedia.org/wiki/File:Netherland_women%27s_field_hockey_team_huddle_2016-08-19.jpg">Matthias Lemm</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
+    <script src="js/site.js"></script>
+    <script src="js/countdown.js"></script>
+  </body>
+</html>

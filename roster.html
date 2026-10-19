@@ -24,7 +24,7 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
         <!-- The mark: a monogram in a colored square. Swap it for your Unit 5 logo,
              and img/favicon.svg with it. -->
@@ -82,7 +82,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <!-- ONE CARD, REPEATED: get the first right, then copy it. data-pos is
                what the filter reads. -->
-          <article class="player card bg-base-200 overflow-hidden" data-pos="fwd">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="fwd">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">7</span>
             </div>
@@ -91,7 +91,7 @@
               <p class="text-sm opacity-80">Forward · Senior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="fwd">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="fwd">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">9</span>
             </div>
@@ -100,7 +100,7 @@
               <p class="text-sm opacity-80">Forward · Junior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="mid">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="mid">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">10</span>
             </div>
@@ -109,7 +109,7 @@
               <p class="text-sm opacity-80">Midfield · Senior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="mid">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="mid">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">8</span>
             </div>
@@ -118,7 +118,7 @@
               <p class="text-sm opacity-80">Midfield · Sophomore</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="mid">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="mid">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">6</span>
             </div>
@@ -127,7 +127,7 @@
               <p class="text-sm opacity-80">Midfield · Junior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="def">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="def">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">4</span>
             </div>
@@ -136,7 +136,7 @@
               <p class="text-sm opacity-80">Defense · Senior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="def">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="def">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">5</span>
             </div>
@@ -145,7 +145,7 @@
               <p class="text-sm opacity-80">Defense · Junior</p>
             </div>
           </article>
-          <article class="player card bg-base-200 overflow-hidden" data-pos="gk">
+          <article class="player card bg-base-200 overflow-hidden" data-reveal data-pos="gk">
             <div class="player-number aspect-square grid place-items-center">
               <span class="font-display text-7xl font-bold">1</span>
             </div>
@@ -160,7 +160,7 @@
       <section class="mb-24">
         <h2 class="font-display text-4xl font-bold uppercase mb-8">Coaches</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <article class="card bg-base-200">
+          <article class="card bg-base-200" data-reveal>
             <div class="card-body">
               <div class="flex items-center gap-4 mb-2">
                 <span class="grid place-items-center size-14 rounded-full bg-primary text-primary-content font-display text-xl font-bold shrink-0" aria-hidden="true">AN</span>
@@ -172,7 +172,7 @@
               <p class="opacity-80">Two lines. Where they came from, how long they have been here.</p>
             </div>
           </article>
-          <article class="card bg-base-200">
+          <article class="card bg-base-200" data-reveal>
             <div class="card-body">
               <div class="flex items-center gap-4 mb-2">
                 <span class="grid place-items-center size-14 rounded-full bg-neutral text-neutral-content font-display text-xl font-bold shrink-0" aria-hidden="true">AN</span>
@@ -184,7 +184,7 @@
               <p class="opacity-80">Two lines. Keep all three the same length.</p>
             </div>
           </article>
-          <article class="card bg-base-200">
+          <article class="card bg-base-200" data-reveal>
             <div class="card-body">
               <div class="flex items-center gap-4 mb-2">
                 <span class="grid place-items-center size-14 rounded-full bg-neutral text-neutral-content font-display text-xl font-bold shrink-0" aria-hidden="true">AN</span>
@@ -241,6 +241,7 @@
             <li><a class="link link-hover" href="index.html">Home</a></li>
             <li><a class="link link-hover" href="schedule.html">Schedule</a></li>
             <li><a class="link link-hover" href="roster.html">Roster</a></li>
+            <li><a class="link link-hover" href="game.html">Last match report</a></li>
             <li><a class="link link-hover" href="schedule.html#tickets">Tickets</a></li>
           </ul>
         </nav>
@@ -273,12 +274,16 @@
           <details class="md:max-w-xl">
             <summary class="cursor-pointer link link-hover opacity-80">Photo and video credits</summary>
             <ul class="mt-3 space-y-1 opacity-80">
-              <li>Hero video: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. Clipped to 0:01–0:34.</li>
+              <li>Hero video and highlights: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. The hero clipped to 0:01–0:34.</li>
               <li>Night game: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_night_game_at_Duane_Stadium_at_Merrimack_College.jpg">Kenneth C. Zirkel</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
               <li>Crowd: <a class="link" href="https://commons.wikimedia.org/wiki/File:Peden_Stadium_at_Night.jpg">NotJamestack</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
               <li>Ball: <a class="link" href="https://commons.wikimedia.org/wiki/File:Adidas_soccer_ball_on_a_grass_pitch_(Unsplash).jpg">Peter Glaser baraida</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Field: <a class="link" href="https://commons.wikimedia.org/wiki/File:Scudamore_Field_at_NKU_Soccer_Stadium_2024.jpg">Kithira</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Floodlights: <a class="link" href="https://commons.wikimedia.org/wiki/File:Champasak_Stadium_during_at_night_22Jan2026.jpg">AddedUpdatePoster</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Night match: <a class="link" href="https://commons.wikimedia.org/wiki/File:DFC_5336_A_tense_moment_as_a_striker_fires_a_shot_on_goal_while_the_goalkeeper_dives_to_make_the_save_during_a_nighttime_amateur_soccer_match.jpg">PattayaPatrol</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Midfield: <a class="link" href="https://commons.wikimedia.org/wiki/File:ODU_v_W%26M_Women%27s_Soccer_(9543090542).jpg">Mobilus In Mobili</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped.</li>
+              <li>Header: <a class="link" href="https://commons.wikimedia.org/wiki/File:HVCC_mens_soccer.jpg">Tritooth</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Huddle: <a class="link" href="https://commons.wikimedia.org/wiki/File:Netherland_women%27s_field_hockey_team_huddle_2016-08-19.jpg">Matthias Lemm</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
             </ul>
           </details>
@@ -286,6 +291,10 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
     <script src="js/site.js"></script>
+    <script src="js/countdown.js"></script>
   </body>
 </html>

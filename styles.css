@@ -119,6 +119,19 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   display: none;
 }
 
+/* The standings: each team's name stays pinned at the left while a phone
+ * scrolls the numbers, and your own row (aria-current) wears the team color. */
+.standings tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--color-base-100);
+}
+.standings tr[aria-current] > * {
+  background: color-mix(in oklch, var(--color-primary) 14%, var(--color-base-100));
+  font-weight: 700;
+}
+
 /* The number panel on each player card: the shirt number on the team color. */
 .player-number {
   background:
@@ -192,6 +205,354 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   color: var(--color-base-content);
 }
 
+/* ============================================================ MOTION
+ *
+ * Anything marked data-reveal fades up as it scrolls into view; "left",
+ * "right" or "zoom" change how it arrives. js/site.js puts .reveal-on on <html>
+ * first, so with no script, or for a reader who asks for less motion, nothing
+ * is ever hidden. */
+/* A "right" waiting off the edge of a phone would let the page slide sideways. */
+.reveal-on main {
+  overflow-x: clip;
+}
+.reveal-on [data-reveal] {
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal-on [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+.reveal-on [data-reveal='left']:not(.is-revealed) {
+  transform: translateX(-2.5rem);
+}
+.reveal-on [data-reveal='right']:not(.is-revealed) {
+  transform: translateX(2.5rem);
+}
+.reveal-on [data-reveal='zoom']:not(.is-revealed) {
+  transform: scale(0.94);
+}
+
+/* Scores and numbers that count up keep every digit the same width, so a line
+ * does not wobble while they change. */
+[data-count],
+[data-unit],
+.score {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The sticky nav lifts off the page once it scrolls (.is-scrolled). */
+[data-sticky-nav] {
+  transition: box-shadow 0.3s ease;
+}
+[data-sticky-nav].is-scrolled {
+  box-shadow: 0 12px 30px -14px rgb(0 0 0 / 0.7);
+}
+
+/* ============================================================ THE COUNTDOWN
+ *
+ * Days, hours, minutes and seconds to the next game, from js/countdown.js. It
+ * stays hidden until the date in data-countdown is a real one. The [hidden]
+ * rule matters: display: flex would otherwise show it anyway. Not called
+ * .countdown: daisyUI has a component by that name, and it would squash these
+ * boxes to one line. Check a new class name at daisyui.com before you use it. */
+.game-countdown {
+  display: flex;
+  gap: 0.5rem;
+}
+.game-countdown[hidden] {
+  display: none;
+}
+.game-countdown [data-unit-box] {
+  display: grid;
+  justify-items: center;
+  min-width: 3.75rem;
+  padding: 0.5rem 0.5rem 0.4rem;
+  border-radius: var(--radius-field);
+  background: var(--color-base-200);
+}
+.game-countdown [data-unit] {
+  font-family: 'Oswald', Impact, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.game-countdown small {
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============================================================ STAT BARS
+ *
+ * A bar's length is --value on the bar, as a percentage: this player's number
+ * over the leader's. Inside a data-reveal block the bars grow from nothing as
+ * it scrolls in; anywhere else, and for a reader who asks for less motion,
+ * they are simply drawn. */
+.stat-bar {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--color-base-content) 14%, transparent);
+  overflow: hidden;
+}
+.stat-bar > span {
+  display: block;
+  height: 100%;
+  width: var(--value, 0%);
+  border-radius: inherit;
+  background: var(--color-primary);
+  transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s;
+}
+.reveal-on [data-reveal]:not(.is-revealed) .stat-bar > span,
+.reveal-on [data-reveal]:not(.is-revealed) .h2h-bar > span {
+  width: 0;
+}
+
+/* ============================================================ HEAD TO HEAD
+ *
+ * The match report's team stats: each team has half the bar, yours growing
+ * from the middle to the left and theirs to the right. --home and --away on
+ * each row are the two teams' shares of the total, so they add up to 100%. */
+.h2h-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  height: 0.5rem;
+}
+.h2h-bar > span {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s;
+}
+.h2h-bar > :first-child {
+  width: var(--home, 50%);
+  justify-self: end;
+  background: var(--color-primary);
+}
+.h2h-bar > :last-child {
+  width: var(--away, 50%);
+  justify-self: start;
+  background: color-mix(in oklch, var(--color-base-content) 45%, transparent);
+}
+
+/* ============================================================ KEY MOMENTS
+ *
+ * The match report's timeline. On a phone every moment hangs off one line at
+ * the left; on a wider screen the line runs down the middle, with your moments
+ * on the left and theirs on the right (data-side="away"). */
+.moments {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+}
+.moments::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.75rem;
+  width: 2px;
+  background: color-mix(in oklch, var(--color-base-content) 18%, transparent);
+}
+.moment {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.moment-min {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  background: var(--color-base-100);
+  border: 2px solid var(--color-primary);
+  font-family: 'Oswald', Impact, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.moment[data-side='away'] .moment-min {
+  border-color: color-mix(in oklch, var(--color-base-content) 45%, transparent);
+}
+.moment-break {
+  justify-self: start;
+  margin-left: 0.5rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .moments::before {
+    left: 50%;
+    translate: -1px 0;
+  }
+  .moment {
+    grid-template-columns: 1fr 3.5rem 1fr;
+  }
+  .moment .moment-min {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .moment[data-side='home'] .moment-body {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+  }
+  .moment[data-side='away'] .moment-body {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .moment-break {
+    justify-self: center;
+    margin-left: 0;
+  }
+}
+
+/* ============================================================ HIGHLIGHTS
+ *
+ * The play button on a video link breathes out, to say it can be pressed. */
+.play-pulse {
+  isolation: isolate;
+}
+.play-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: inherit;
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse {
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* ============================================================ BACK TO TOP
+ *
+ * The round button in the corner. Its ring fills as you read down the page
+ * (--progress, 0 to 1, from js/site.js). Hidden until you have scrolled. */
+.to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  color: var(--color-primary);
+  background: radial-gradient(closest-side, var(--color-base-200) calc(100% - 3px), transparent calc(100% - 2px)),
+    conic-gradient(var(--color-primary) calc(var(--progress, 0) * 1turn), color-mix(in oklch, var(--color-base-content) 20%, transparent) 0);
+  box-shadow: 0 10px 25px -10px rgb(0 0 0 / 0.6);
+  transition: opacity 0.3s ease, translate 0.3s ease, visibility 0.3s;
+}
+.to-top[hidden] {
+  display: none;
+}
+.to-top:not(.is-shown) {
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 1rem;
+}
+@media (min-width: 768px) {
+  .to-top {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
+
+/* ============================================================ LIGHTBOX
+ *
+ * Photos inside data-lightbox open large on the page instead of on their own.
+ * Each is a link to the full image, so with no script the link still works.
+ * js/site.js builds the viewer, a <dialog>, the first time it is needed. */
+[data-lightbox] a {
+  cursor: zoom-in;
+}
+[data-lightbox] a[data-video-popup] {
+  cursor: pointer;
+}
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+}
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.9);
+  backdrop-filter: blur(6px);
+}
+.lightbox-stage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 4.5rem 1rem 3.5rem;
+}
+.lightbox figure {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  max-width: min(100%, 72rem);
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100svh - 11rem);
+  object-fit: contain;
+  border-radius: var(--radius-box);
+  animation: lightbox-in 0.35s ease both;
+}
+.lightbox .lightbox-video {
+  width: min(100vw - 2rem, 64rem);
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-box);
+  background: #000;
+}
+.lightbox figcaption {
+  text-align: center;
+  max-width: 40rem;
+}
+.lightbox-bar {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+.lightbox-arrow[data-lb-prev] {
+  left: 1rem;
+}
+.lightbox-arrow[data-lb-next] {
+  right: 1rem;
+}
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
 /* ============================================================ EVERYTHING ELSE */
 
 /* Footer headings at full strength. daisyUI's fade passes on `night` by a hair
@@ -240,5 +601,9 @@ html {
   }
   .group:hover img {
     transform: none;
+  }
+  .play-pulse::before,
+  .lightbox img {
+    animation: none;
   }
 }

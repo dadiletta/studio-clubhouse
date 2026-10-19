@@ -24,7 +24,7 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
         <!-- The mark: a monogram in a colored square. Swap it for your Unit 5 logo,
              and img/favicon.svg with it. -->
@@ -111,7 +111,7 @@
               <th scope="row"><time datetime="20XX-09-27T19:00">Sep 27</time></th>
               <td>vs. Opponent</td>
               <td>Home</td>
-              <td class="text-right"><span class="badge badge-success">W 00–00</span></td>
+              <td class="text-right"><a class="link text-sm font-normal mr-2" href="game.html">Report</a><span class="badge badge-success">W 00–00</span></td>
             </tr>
             <tr data-venue="home" class="font-bold bg-primary/10">
               <th scope="row"><time datetime="20XX-10-04T19:00">Oct 4</time></th>
@@ -141,6 +141,89 @@
         </table>
       </div>
 
+      <!-- ============================================================ STANDINGS
+           The league table, a real <table>. Short headings get <abbr title> so
+           they can be said in full; each team's name is its row's header and
+           stays pinned at the left on a phone. Your own row is the one marked
+           aria-current. Form is the last five, oldest first. -->
+      <section id="standings" class="mt-24" aria-labelledby="standings-title">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+          <h2 id="standings-title" class="font-display text-4xl font-bold uppercase">Standings</h2>
+          <p class="text-sm opacity-80">Your league · after <time datetime="20XX-09-27">Sep 27</time></p>
+        </div>
+        <div class="overflow-x-auto rounded-box border border-base-content/10" tabindex="0" role="region" aria-labelledby="standings-title" data-reveal>
+          <table class="table standings min-w-[36rem]">
+            <thead class="bg-base-200 text-base-content">
+              <tr>
+                <th scope="col">Team</th>
+                <th scope="col" class="text-center"><abbr title="Played">P</abbr></th>
+                <th scope="col" class="text-center"><abbr title="Won">W</abbr></th>
+                <th scope="col" class="text-center"><abbr title="Drawn">D</abbr></th>
+                <th scope="col" class="text-center"><abbr title="Lost">L</abbr></th>
+                <th scope="col" class="text-center"><abbr title="Points">Pts</abbr></th>
+                <th scope="col">Form</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="inline-block w-5 opacity-80">1</span> Opponent</th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span></span><span class="sr-only">Won, Won, Won, Drew, Won</span></td>
+              </tr>
+              <tr aria-current="true">
+                <th scope="row"><span class="inline-block w-5 opacity-80">2</span> Your team <span class="badge badge-primary badge-xs ml-1">You</span></th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span></span><span class="sr-only">Won, Lost, Drew, Won, Won</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="inline-block w-5 opacity-80">3</span> Opponent</th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span></span><span class="sr-only">Lost, Won, Won, Drew, Lost</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="inline-block w-5 opacity-80">4</span> Opponent</th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span></span><span class="sr-only">Drew, Drew, Won, Lost, Won</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="inline-block w-5 opacity-80">5</span> Opponent</th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span></span><span class="sr-only">Lost, Lost, Won, Drew, Lost</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="inline-block w-5 opacity-80">6</span> Opponent</th>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center">0</td>
+                <td class="text-center font-bold">0</td>
+                <td><span class="flex gap-1"><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-neutral badge-sm font-bold w-6" aria-hidden="true">D</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-error badge-sm font-bold w-6" aria-hidden="true">L</span><span class="badge badge-success badge-sm font-bold w-6" aria-hidden="true">W</span></span><span class="sr-only">Lost, Drew, Lost, Lost, Won</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- ============================================================ TICKETS
            Three tiers, parallel. Mark the middle one only if it is true. -->
       <section id="tickets" class="mt-24">
@@ -151,7 +234,7 @@
           to say.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          <div class="card bg-base-200">
+          <div class="card bg-base-200" data-reveal>
             <div class="card-body">
               <h3 class="card-title uppercase font-display text-2xl">Students</h3>
               <p class="font-display text-5xl font-bold">$0</p>
@@ -162,7 +245,7 @@
               <a class="btn btn-outline mt-auto" href="mailto:coach@example.com">Ask about student tickets</a>
             </div>
           </div>
-          <div class="card bg-base-200 ring-2 ring-primary relative">
+          <div class="card bg-base-200 ring-2 ring-primary relative" data-reveal>
             <span class="badge badge-primary absolute -top-3 left-1/2 -translate-x-1/2">Most fans</span>
             <div class="card-body">
               <h3 class="card-title uppercase font-display text-2xl">General</h3>
@@ -174,7 +257,7 @@
               <a class="btn btn-primary mt-auto" href="mailto:coach@example.com">Buy general admission</a>
             </div>
           </div>
-          <div class="card bg-base-200">
+          <div class="card bg-base-200" data-reveal>
             <div class="card-body">
               <h3 class="card-title uppercase font-display text-2xl">Season</h3>
               <p class="font-display text-5xl font-bold">$00</p>
@@ -246,6 +329,7 @@
             <li><a class="link link-hover" href="index.html">Home</a></li>
             <li><a class="link link-hover" href="schedule.html">Schedule</a></li>
             <li><a class="link link-hover" href="roster.html">Roster</a></li>
+            <li><a class="link link-hover" href="game.html">Last match report</a></li>
             <li><a class="link link-hover" href="schedule.html#tickets">Tickets</a></li>
           </ul>
         </nav>
@@ -278,12 +362,16 @@
           <details class="md:max-w-xl">
             <summary class="cursor-pointer link link-hover opacity-80">Photo and video credits</summary>
             <ul class="mt-3 space-y-1 opacity-80">
-              <li>Hero video: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. Clipped to 0:01–0:34.</li>
+              <li>Hero video and highlights: <a class="link" href="https://www.youtube.com/watch?v=pGeUEGLOtcA"><em>Soccer Game by DJI Mavic Pro Drone</em></a> by allenthebigman, YouTube, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>. The hero clipped to 0:01–0:34.</li>
               <li>Night game: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_night_game_at_Duane_Stadium_at_Merrimack_College.jpg">Kenneth C. Zirkel</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
               <li>Crowd: <a class="link" href="https://commons.wikimedia.org/wiki/File:Peden_Stadium_at_Night.jpg">NotJamestack</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
               <li>Ball: <a class="link" href="https://commons.wikimedia.org/wiki/File:Adidas_soccer_ball_on_a_grass_pitch_(Unsplash).jpg">Peter Glaser baraida</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Field: <a class="link" href="https://commons.wikimedia.org/wiki/File:Scudamore_Field_at_NKU_Soccer_Stadium_2024.jpg">Kithira</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Floodlights: <a class="link" href="https://commons.wikimedia.org/wiki/File:Champasak_Stadium_during_at_night_22Jan2026.jpg">AddedUpdatePoster</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Night match: <a class="link" href="https://commons.wikimedia.org/wiki/File:DFC_5336_A_tense_moment_as_a_striker_fires_a_shot_on_goal_while_the_goalkeeper_dives_to_make_the_save_during_a_nighttime_amateur_soccer_match.jpg">PattayaPatrol</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Midfield: <a class="link" href="https://commons.wikimedia.org/wiki/File:ODU_v_W%26M_Women%27s_Soccer_(9543090542).jpg">Mobilus In Mobili</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped.</li>
+              <li>Header: <a class="link" href="https://commons.wikimedia.org/wiki/File:HVCC_mens_soccer.jpg">Tritooth</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped.</li>
+              <li>Huddle: <a class="link" href="https://commons.wikimedia.org/wiki/File:Netherland_women%27s_field_hockey_team_huddle_2016-08-19.jpg">Matthias Lemm</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
               <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
             </ul>
           </details>
@@ -291,6 +379,10 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
     <script src="js/site.js"></script>
+    <script src="js/countdown.js"></script>
   </body>
 </html>

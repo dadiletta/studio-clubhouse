@@ -1,8 +1,9 @@
 # Clubhouse — a Studio starter
 
-A three-page team site with a **YouTube background hero** and a card that
-overlaps it, a whole season marked up as a real table, and filters that need no
-JavaScript. Not a finished template you recolor — a professional structure you
+A four-page team site with a **YouTube background hero** and a card that
+overlaps it and counts down to the next game, a whole season and the league
+standings marked up as real tables, filters that need no JavaScript, and a
+match report for the last game. Not a finished template you recolor — a professional structure you
 make yours, and can defend every choice in.
 
 **See it running: <https://dadiletta.github.io/studio-clubhouse/>** — that page
@@ -12,14 +13,16 @@ That difference is the point. A team handed a finished site rearranges it. A
 team handed a real structure builds one.
 
 ```
-index.html         hero (video) · next game · record · fixtures and results · news · matchday carousel · story · sponsors
+index.html         hero (video) · next game, counting down · record and form · fixtures and results · highlights · season leaders · news · matchday carousel · story · sponsors
 index-2.html       another home: the nav over a photo slider. Keep one home
 elements.html      the parts page: copy what you want, then delete it
-schedule.html      the season as a real table, a Home/Away filter, ticket tiers, the venue and a map
+schedule.html      the season as a real table, a Home/Away filter, the standings, ticket tiers, the venue and a map
 roster.html        players by number with a position filter, coaches, how to try out
-styles.css         your palette, your type, the hero video, the filters, the carousels, the nav over the hero
+game.html          the match report: scoreboard, the story, key moments, team stats, who played, highlights, the next game
+styles.css         your palette, your type, the hero video, the filters, the team-site parts, the effects
 js/hero-video.js   the video, and what happens when YouTube is blocked
-js/site.js         the phone menu, the footer year, the demo signup, the carousels, the nav over the hero
+js/countdown.js    the countdown to the next game
+js/site.js         the phone menu, the footer year, the demo signup, the carousels, the nav over the hero, the effects
 img/               the photographs, and favicon.svg (the icon in the browser tab)
 AGENTS.md          what AI help may and may not do on this project
 ```
@@ -33,7 +36,7 @@ AGENTS.md          what AI help may and may not do on this project
    and go back to work.
 2. Open `index.html` with **Live Server** — the **Go Live** button in the status
    bar. Not by double-clicking: see Unit 4 for why `file://` is not a website.
-3. Change `data-theme="night"` on the `<html>` tag — **in all three pages**. Do
+3. Change `data-theme="night"` on the `<html>` tag — **on every page**. Do
    this first. Try `sunset`, `synthwave`, `dracula`, `forest`, `business`,
    `dim`, `black`. All 35 are at
    [daisyui.com/docs/themes](https://daisyui.com/docs/themes/).
@@ -53,6 +56,30 @@ AGENTS.md          what AI help may and may not do on this project
   every player card its `data-pos`, or the filter cannot see it. The positions
   are soccer's — rename them for your sport in three places: the buttons, the
   cards, and `styles.css`.
+- **Not a sports team?** A robotics team, a debate squad and a band have games
+  too: competitions, rounds, performances. Every part here is a layout, not a
+  sport. Rename *goals* to *points* or *wins*, *halves* to *rounds*, and *key
+  moments* to whatever turned the day.
+- **A countdown to the next game** in the card over the hero. It reads the
+  game's date from `data-countdown`, written like a `<time datetime>`, and stays
+  hidden while the date is the starter's `20XX`, or once the game has started.
+  The date is in the card twice, once for people and once for the countdown:
+  change both.
+- **The standings**, another real `<table>`. Short headings like *P* and *Pts*
+  wear `<abbr title>` so they can be said in full, each team's name is its
+  row's header, and your row is marked `aria-current`. The last five results sit
+  beside each team, a letter each.
+- **A match report** (`game.html`) for the last game: a scoreboard, the story,
+  the moments that decided it as a timeline (each minute a `<time>` whose
+  `datetime` is a duration: `PT12M` is twelve minutes in), team stats as bars
+  that meet in the middle, and who played. The home page's latest result and
+  its match report story both link to it.
+- **Season leaders** on the home page: each count's leader and the next two, as
+  bars that grow when they scroll into view. A bar's length is `--value` in its
+  `style`: that number over the leader's.
+- **Highlights**: a video and four action shots in one lightbox. Open any one and
+  the arrows step through the rest. The video's link goes to YouTube, so with no
+  script it plays there instead.
 - **A phone menu that needs no JavaScript.** It is a `<details>` element.
   `js/site.js` only adds "close when I tap away".
 - **Real photographs, properly credited.** Every one is from Wikimedia Commons,
@@ -77,7 +104,8 @@ This one does too.
   the keeper `index.html`.
 - **`elements.html`** is the parts page: a photo slider, a quote carousel,
   tabs, pricing, a team, a timeline, steps, a photo wall, a call to action on a
-  photo, and questions. Its nav is a part too, the centered one. See it at
+  photo, questions, the next game counting down, standings, season leaders, a
+  scoreboard, key moments, team stats, and highlights. Its nav is a part too, the centered one. See it at
   <https://dadiletta.github.io/studio-clubhouse/elements.html>. Each part sits between a `COPY FROM HERE` and a
   `TO HERE` comment: copy what you want into your pages, then **delete
   `elements.html`** before you hand in. Nothing links to it.
@@ -96,6 +124,26 @@ A slider that turns by itself has to stop for people: it holds while the
 pointer or the keyboard is on it, it has a pause button, and for anyone whose
 computer asks for less motion it never turns at all. Keep all three. Add or
 remove slides freely; every slide is one element inside the `carousel`.
+
+## The effects
+
+Every effect is switched on by an attribute or a class in the HTML, and every
+one is extra: delete it and the element simply sits there, finished. With the
+scripts blocked nothing is hidden, a photo link just opens the photo, and for
+anyone whose computer asks for less motion nothing moves.
+
+| Put this on an element | And it |
+| --- | --- |
+| `data-countdown="…"` | counts down to that moment, in the boxes marked `data-unit`. Hidden until the date is real and in the future. |
+| `data-reveal` | fades it up as it scrolls into view, once. `"left"`, `"right"` or `"zoom"` change how it arrives. Bars inside it grow as it arrives. |
+| `data-count` | counts up to the number in its own text: `12`, `1,200` and `40+` all work. `00` stays `00`. |
+| `data-lightbox` | on a block of photo links, opens each photo large over the page, with arrows to the rest. |
+| `data-video-popup` | on a link to a YouTube video, plays it over the page. `&t=90` in the link starts it 90 seconds in. Credit it like a photo. |
+| `data-sticky-nav` | on the nav, adds a shadow once the page scrolls under it. |
+| `data-to-top` | is the back-to-top button at the bottom of every page. |
+
+The countdown runs in `js/countdown.js`, the rest in `js/site.js`. A countdown
+is the one thing on a team site worth ticking every second; leave the rest calm.
 
 ## How the video hero works
 
@@ -131,11 +179,19 @@ same goes for a highlight reel with faces in it.
 
 ## Things that will bite you
 
-- **The three pages must match.** Theme, nav, footer, fonts, credits. A site
-  that restyles itself between clicks reads as broken. This is the real cost of
+- **The pages must match.** Theme, nav, footer, fonts, credits. A site that
+  restyles itself between clicks reads as broken. This is the real cost of
   plain HTML, and Unit 8's build step is the fix.
 - **The nav is in there twice** on every page — a row of links for wide screens
-  and the phone dropdown. Add a page, add it to both, on all three pages.
+  and the phone dropdown. Add a page, add it to both, on every page.
+- **A class name daisyUI already uses.** The countdown's class is
+  `game-countdown`, not `countdown`, because daisyUI has a component called
+  `countdown` that squashed every box to one line. `stat`, `timeline`, `steps`
+  and `badge` are daisyUI's too. Search [daisyui.com](https://daisyui.com/)
+  before you name a class of your own.
+- **Numbers that live in two places.** A bar's `--value`, a team-stat row's
+  `--home` and `--away`, and the countdown's date are all written once for the
+  eye and once for the code. Change the number, change the style beside it.
 - **Your team's color may not take black text.** `--color-primary-content` is
   the text color that rides on `--color-primary`. Set both together and measure
   the pair — a deep navy with black text on it is the classic school-site
@@ -153,7 +209,8 @@ same goes for a highlight reel with faces in it.
   4.5:1, or 3:1 for large headings. Muted text (`opacity-80`) is the first thing
   to fail on a new theme. Measure again after you switch.
 - **Big photographs.** A photo straight off a phone is 4 MB. The ones here are
-  300 KB at most. Resize yours before you commit them.
+  300 KB at most, except the two that fill the whole screen, at 305 and
+  421 KB. Resize yours before you commit them.
 
 ## Check your own work before you hand it in
 
@@ -161,8 +218,8 @@ Tick this yourself first — auditing a page against a written spec is a graded
 skill in its own right (`WD3.B`), and it is much better to find these than to
 have them found.
 
-- [ ] Every placeholder is gone. Search all three files for `Opponent`, `00`,
-      `20XX`, `A name`, `Sponsor` and `______`.
+- [ ] Every placeholder is gone. Search every page for `Opponent`, `00`,
+      `20XX`, `A name`, `Your team`, `Sponsor` and `______`.
 - [ ] Every section is the element it should be — `nav`, `header`, `main`,
       `footer`, `article`, `table` — not a `div` wearing a class.
 - [ ] The headings outline each page. Read `h1`, `h2`, `h3` alone, in order: one
@@ -171,6 +228,9 @@ have them found.
       full width. Nothing scrolls sideways at 380px — the schedule table
       scrolls **inside its own box**, which is what `overflow-x-auto` is for.
 - [ ] Both filters still work after your edits. Click every button.
+- [ ] Every bar's `--value`, and every team stat's `--home` and `--away`,
+      matches the numbers beside it.
+- [ ] The countdown shows a real date, and it is the same as the date in words.
 - [ ] There is **one** obvious call to action per page, and its label says what
       happens. Not "Click here".
 - [ ] Your palette is recorded as a comment block at the top of `styles.css`,

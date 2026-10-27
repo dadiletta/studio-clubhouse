@@ -14,7 +14,8 @@ team handed a real structure builds one.
 
 ```
 index.html         hero (video) · next game, counting down · record and form · fixtures and results · highlights · season leaders · news · matchday carousel · story · sponsors
-index-2.html       another home: the nav over a photo slider. Keep one home
+index-2.html       another home: the nav over a photo slider
+index-3.html       a third: an action photo on a slant beside the last score. Keep one home
 elements.html      the parts page: copy what you want, then delete it
 schedule.html      the season as a real table, a Home/Away filter, the standings, ticket tiers, the venue and a map
 roster.html        players by number with a position filter, coaches, how to try out
@@ -102,15 +103,20 @@ This one does too.
 
 - **`index-2.html`** is the same site with a different top: the nav sits over a
   full-screen photo slider and turns solid as you scroll. See it at
-  <https://dadiletta.github.io/studio-clubhouse/index-2.html>. **Keep one home, not both**: delete the other and name
-  the keeper `index.html`.
+  <https://dadiletta.github.io/studio-clubhouse/index-2.html>. **`index-3.html`** is a third: an
+  action photo cut on a slant, beside the name and a scoreboard of the last
+  result. **Keep one home**: delete the others and name the keeper `index.html`. The nav's **Homes** dropdown shows each home's top;
+  delete it once you've chosen. The nav itself is a full-width bar in the team
+  color, under a strip with the next match, the last result and the table:
+  change that strip every week, or delete it.
 - **`elements.html`** is the parts page: a photo slider, a quote carousel,
   tabs, pricing, a team, a timeline, steps, a photo wall, a call to action on a
   photo, questions, the next game counting down, standings, season leaders, a
   scoreboard, key moments, team stats, and highlights. Its nav is a part too, the centered one. See it at
   <https://dadiletta.github.io/studio-clubhouse/elements.html>. Each part sits between a `COPY FROM HERE` and a
   `TO HERE` comment: copy what you want into your pages, then **delete
-  `elements.html`** before you hand in. Nothing links to it.
+  `elements.html`** before you hand in, and the **Elements** link in every nav
+  with it.
 
 ### How the carousels work
 

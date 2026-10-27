@@ -179,6 +179,13 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   display: block;
 }
 
+/* index-3.html's photo ends on a slant beside the words, on wide screens. */
+@media (min-width: 64rem) {
+  .hero-slant {
+    clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+  }
+}
+
 /* ============================================================ NAV OVER THE HERO
  *
  * index-2.html's nav: white on the photo, then the page's own colors once the

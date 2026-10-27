@@ -24,28 +24,75 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <!-- THE TICKER: the next match and the last result, above the nav. Change
+         it every week, or delete it. On a phone it scrolls sideways. -->
+    <aside class="bg-neutral text-neutral-content text-sm" aria-label="This week">
+      <div class="px-4 md:px-8 py-2 flex items-center gap-6 md:gap-10 overflow-x-auto whitespace-nowrap">
+        <p class="shrink-0"><span class="badge badge-primary badge-sm font-bold uppercase mr-2">Next</span>vs. Opponent · <time datetime="20XX-10-04T19:00">Sat Oct 4, 7:00 pm</time> · Home</p>
+        <p class="shrink-0"><span class="badge badge-sm font-bold uppercase mr-2">Last</span><a class="link link-hover" href="game.html">Won 00–00 at Opponent</a></p>
+        <p class="shrink-0"><span class="badge badge-sm font-bold uppercase mr-2">Table</span>0th of 00 · 00 points</p>
+      </div>
+    </aside>
+
+    <!-- THE NAV: a full-width bar in the team color. It is on every page:
+         change one, change all. -->
+    <nav data-sticky-nav class="navbar bg-primary text-primary-content sticky top-0 z-30 px-4 md:px-8 shadow-lg" aria-label="Main">
       <div class="navbar-start">
-        <!-- The mark: a monogram in a colored square. Swap it for your Unit 5 logo,
+        <!-- The mark: a monogram in a square. Swap it for your Unit 5 logo,
              and img/favicon.svg with it. -->
         <a class="flex items-center gap-3" href="index.html">
-          <span class="grid place-items-center size-10 rounded-lg bg-primary text-primary-content font-display text-xl font-bold">C</span>
+          <span class="grid place-items-center size-10 rounded-lg bg-primary-content text-primary font-display text-xl font-bold">C</span>
           <span class="font-display text-xl font-bold uppercase tracking-wider">Clubhouse</span>
         </a>
       </div>
       <div class="navbar-end gap-2">
-        <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
-          <li><a href="index.html">Home</a></li>
+        <!-- HOMES: each home page has its own hero. Keep the one you like best
+             as index.html, then delete the rest and this dropdown. -->
+        <details class="dropdown dropdown-end hidden lg:block">
+          <summary class="btn btn-ghost text-inherit font-display text-lg font-normal uppercase tracking-wide gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="dropdown-content bg-base-100 text-base-content normal-case tracking-normal font-normal border border-base-content/10 rounded-box z-40 mt-3 w-[38rem] p-3 shadow-xl">
+            <ul class="grid grid-cols-3 gap-2">
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index.html">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/stadium-night.jpg" width="1920" height="1080" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 1</span>
+                  <span class="block text-sm text-base-content/70">A film of the stadium behind the next match</span>
+                </a>
+              </li>
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index-2.html">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/crowd-wide.jpg" width="1920" height="1080" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 2</span>
+                  <span class="block text-sm text-base-content/70">The nav over three photos that turn</span>
+                </a>
+              </li>
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index-3.html">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/action-shot.jpg" width="1440" height="788" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 3</span>
+                  <span class="block text-sm text-base-content/70">An action photo on a slant beside the last score</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <ul class="menu menu-horizontal hidden lg:flex gap-1 font-display text-lg uppercase tracking-wide">
           <li><a href="schedule.html" aria-current="page">Schedule</a></li>
           <li><a href="roster.html">Roster</a></li>
+          <li><a href="elements.html">Elements</a></li>
         </ul>
-        <a class="btn btn-primary btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
-        <details class="dropdown dropdown-end md:hidden">
-          <summary class="btn btn-ghost btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
-          <ul class="menu dropdown-content bg-base-200 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
-            <li><a href="index.html">Home</a></li>
+        <a class="btn btn-neutral btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+        <details class="dropdown dropdown-end lg:hidden">
+          <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+          <ul class="menu dropdown-content bg-base-100 text-base-content normal-case tracking-normal font-normal border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
+            <li class="menu-title">Homes</li>
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index-2.html">Home 2</a></li>
+            <li><a href="index-3.html">Home 3</a></li>
+            <li class="menu-title">Pages</li>
             <li><a href="schedule.html" aria-current="page">Schedule</a></li>
             <li><a href="roster.html">Roster</a></li>
+            <li><a href="elements.html">Elements</a></li>
           </ul>
         </details>
       </div>

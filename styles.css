@@ -1,9 +1,8 @@
 /* Your own rules. This file loads after Tailwind and daisyUI, so it wins a tie.
  * Reach for a utility class first; write CSS here when no utility can do it. */
 
-/* ============================================================ PALETTE
- *
- * "…"
+/* ===== PALETTE ===== */
+/* "…"
  *
  * Name the mood in a sentence — "a floodlit field twenty minutes before
  * kickoff" — then list your colors and the job each one does. A team site
@@ -13,8 +12,7 @@
  *   primary   #______   the loud one: buttons, the badge, the stat number
  *   base-100  #______   the page ground
  *   base-200  #______   sections that step forward from the ground
- *   accent    #______   a second accent, if you need one at all
- */
+ *   accent    #______   a second accent, if you need one at all */
 
 /* Redeclare the theme's colors here to make them yours. Change `night` to the
  * theme on <html>, in every page. Set --color-primary-content with your primary
@@ -24,10 +22,10 @@
   /* --color-primary-content: #______; */
   /* --color-accent: #______; */
 }
+/* ===== END PALETTE ===== */
 
-/* ============================================================ TYPE
- *
- * Two faces at most: Oswald for headings, Inter for body. To change them,
+/* ===== TYPE ===== */
+/* Two faces at most: Oswald for headings, Inter for body. To change them,
  * replace the Google Fonts <link> in the <head> of every page, then the names below. */
 body {
   font-family: 'Inter', system-ui, sans-serif;
@@ -36,10 +34,10 @@ body {
 .card-title {
   font-family: 'Oswald', Impact, sans-serif;
 }
+/* ===== END TYPE ===== */
 
-/* ============================================================ HERO VIDEO
- *
- * Load-bearing. js/hero-video.js decides when the video shows; these rules place it. */
+/* ===== HERO VIDEO ===== */
+/* Load-bearing. js/hero-video.js decides when the video shows; these rules place it. */
 
 /* No overflow: hidden on the stage: .hero-poster already clips the video, and a
  * second clip here would cut off the next-game card that crosses the bottom edge. */
@@ -103,10 +101,10 @@ body {
   background: url('img/stadium-night.jpg') center 40% / cover;
   opacity: 0.12;
 }
+/* ===== END HERO VIDEO ===== */
 
-/* ============================================================ FILTERS
- *
- * The schedule's Home/Away and the roster's positions are radio buttons; :has()
+/* ===== FILTERS ===== */
+/* The schedule's Home/Away and the roster's positions are radio buttons; :has()
  * hides what isn't picked. No JavaScript, and they work from a keyboard. */
 main:has(#show-home:checked) tr[data-venue='away'],
 main:has(#show-away:checked) tr[data-venue='home'] {
@@ -138,10 +136,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     linear-gradient(135deg, transparent 0 55%, color-mix(in oklch, var(--color-primary) 22%, transparent) 55% 70%, transparent 70%),
     linear-gradient(to bottom right, var(--color-base-300), var(--color-neutral));
 }
+/* ===== END FILTERS ===== */
 
-/* ============================================================ CAROUSELS
- *
- * daisyUI's .carousel is a sideways scroller that snaps to each slide. js/site.js
+/* ===== CAROUSELS ===== */
+/* daisyUI's .carousel is a sideways scroller that snaps to each slide. js/site.js
  * adds the arrows and dots; these rules dress them. */
 [data-carousel] .carousel {
   position: relative; /* site.js measures each slide from here */
@@ -185,10 +183,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
   }
 }
+/* ===== END CAROUSELS ===== */
 
-/* ============================================================ NAV OVER THE HERO
- *
- * index-2.html's nav: white on the photo, then the page's own colors once the
+/* ===== NAV OVER THE HERO ===== */
+/* index-2.html's nav: white on the photo, then the page's own colors once the
  * photo has scrolled under it (.is-solid, set by js/site.js). */
 .nav-over {
   position: absolute;
@@ -211,10 +209,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
 .nav-over .dropdown-content {
   color: var(--color-base-content);
 }
+/* ===== END NAV OVER THE HERO ===== */
 
-/* ============================================================ MOTION
- *
- * Anything marked data-reveal fades up as it scrolls into view; "left",
+/* ===== MOTION ===== */
+/* Anything marked data-reveal fades up as it scrolls into view; "left",
  * "right" or "zoom" change how it arrives. js/site.js puts .reveal-on on <html>
  * first, so with no script, or for a reader who asks for less motion, nothing
  * is ever hidden. */
@@ -255,10 +253,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
 [data-sticky-nav].is-scrolled {
   box-shadow: 0 12px 30px -14px rgb(0 0 0 / 0.7);
 }
+/* ===== END MOTION ===== */
 
-/* ============================================================ THE COUNTDOWN
- *
- * Days, hours, minutes and seconds to the next game, from js/countdown.js. It
+/* ===== THE COUNTDOWN ===== */
+/* Days, hours, minutes and seconds to the next game, from js/countdown.js. It
  * stays hidden until the date in data-countdown is a real one. The [hidden]
  * rule matters: display: flex would otherwise show it anyway. Not called
  * .countdown: daisyUI has a component by that name, and it would squash these
@@ -291,10 +289,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+/* ===== END THE COUNTDOWN ===== */
 
-/* ============================================================ STAT BARS
- *
- * A bar's length is --value on the bar, as a percentage: this player's number
+/* ===== STAT BARS ===== */
+/* A bar's length is --value on the bar, as a percentage: this player's number
  * over the leader's. Inside a data-reveal block the bars grow from nothing as
  * it scrolls in; anywhere else, and for a reader who asks for less motion,
  * they are simply drawn. */
@@ -316,10 +314,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
 .reveal-on [data-reveal]:not(.is-revealed) .h2h-bar > span {
   width: 0;
 }
+/* ===== END STAT BARS ===== */
 
-/* ============================================================ HEAD TO HEAD
- *
- * The match report's team stats: each team has half the bar, yours growing
+/* ===== HEAD TO HEAD ===== */
+/* The match report's team stats: each team has half the bar, yours growing
  * from the middle to the left and theirs to the right. --home and --away on
  * each row are the two teams' shares of the total, so they add up to 100%. */
 .h2h-bar {
@@ -343,10 +341,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
   justify-self: start;
   background: color-mix(in oklch, var(--color-base-content) 45%, transparent);
 }
+/* ===== END HEAD TO HEAD ===== */
 
-/* ============================================================ KEY MOMENTS
- *
- * The match report's timeline. On a phone every moment hangs off one line at
+/* ===== KEY MOMENTS ===== */
+/* The match report's timeline. On a phone every moment hangs off one line at
  * the left; on a wider screen the line runs down the middle, with your moments
  * on the left and theirs on the right (data-side="away"). */
 .moments {
@@ -416,10 +414,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     margin-left: 0;
   }
 }
+/* ===== END KEY MOMENTS ===== */
 
-/* ============================================================ HIGHLIGHTS
- *
- * The play button on a video link breathes out, to say it can be pressed. */
+/* ===== HIGHLIGHTS ===== */
+/* The play button on a video link breathes out, to say it can be pressed. */
 .play-pulse {
   isolation: isolate;
 }
@@ -438,10 +436,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     opacity: 0;
   }
 }
+/* ===== END HIGHLIGHTS ===== */
 
-/* ============================================================ BACK TO TOP
- *
- * The round button in the corner. Its ring fills as you read down the page
+/* ===== BACK TO TOP ===== */
+/* The round button in the corner. Its ring fills as you read down the page
  * (--progress, 0 to 1, from js/site.js). Hidden until you have scrolled. */
 .to-top {
   position: fixed;
@@ -473,10 +471,10 @@ main:has(#pos-gk:checked) .player:not([data-pos='gk']) {
     bottom: 1.5rem;
   }
 }
+/* ===== END BACK TO TOP ===== */
 
-/* ============================================================ LIGHTBOX
- *
- * Photos inside data-lightbox open large on the page instead of on their own.
+/* ===== LIGHTBOX ===== */
+/* Photos inside data-lightbox open large on the page instead of on their own.
  * Each is a link to the full image, so with no script the link still works.
  * js/site.js builds the viewer, a <dialog>, the first time it is needed. */
 [data-lightbox] a {
@@ -559,8 +557,9 @@ html:has(.lightbox[open]) {
     transform: scale(0.97);
   }
 }
+/* ===== END LIGHTBOX ===== */
 
-/* ============================================================ EVERYTHING ELSE */
+/* ===== EVERYTHING ELSE ===== */
 
 /* Footer headings at full strength. daisyUI's fade passes on `night` by a hair
  * (4.80:1) and fails on other themes. Keep this rule. */
@@ -614,3 +613,4 @@ html {
     animation: none;
   }
 }
+/* ===== END EVERYTHING ELSE ===== */

@@ -24,7 +24,8 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <!-- THE TICKER: the next match and the last result, above the nav. Change
+    <!-- ===== TICKER ===== -->
+    <!-- The next match and the last result, above the nav. Change
          it every week, or delete it. On a phone it scrolls sideways. -->
     <aside class="bg-neutral text-neutral-content text-sm" aria-label="This week">
       <div class="px-4 md:px-8 py-2 flex items-center gap-6 md:gap-10 overflow-x-auto whitespace-nowrap">
@@ -33,8 +34,10 @@
         <p class="shrink-0"><span class="badge badge-sm font-bold uppercase mr-2">Table</span>0th of 00 · 00 points</p>
       </div>
     </aside>
+    <!-- ===== END TICKER ===== -->
 
-    <!-- THE NAV: a full-width bar in the team color. It is on every page:
+    <!-- ===== NAV ===== -->
+    <!-- A full-width bar in the team color. It is on every page:
          change one, change all. -->
     <nav data-sticky-nav class="navbar bg-primary text-primary-content sticky top-0 z-30 px-4 md:px-8 shadow-lg" aria-label="Main">
       <div class="navbar-start w-auto shrink-0">
@@ -46,7 +49,8 @@
         </a>
       </div>
       <div class="navbar-end flex-1 w-auto gap-2">
-        <!-- HOMES: each home page has its own hero. Keep the one you like best
+        <!-- ===== HOMES MENU (wide screens) ===== -->
+        <!-- Each home page has its own hero. Keep the one you like best
              as index.html, then delete the rest and this dropdown. -->
         <details class="dropdown dropdown-end hidden lg:block">
           <summary class="btn btn-ghost text-inherit font-display text-lg font-normal uppercase tracking-wide gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -76,12 +80,16 @@
             </ul>
           </div>
         </details>
+        <!-- ===== END HOMES MENU (wide screens) ===== -->
+        <!-- ===== LINKS (wide screens) ===== -->
         <ul class="menu menu-horizontal hidden lg:flex gap-1 font-display text-lg uppercase tracking-wide">
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="roster.html" aria-current="page">Roster</a></li>
           <li><a href="elements.html">Elements</a></li>
         </ul>
+        <!-- ===== END LINKS (wide screens) ===== -->
         <a class="btn btn-neutral btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+        <!-- ===== PHONE MENU ===== -->
         <details class="dropdown dropdown-end lg:hidden">
           <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
           <ul class="menu dropdown-content bg-base-100 text-base-content normal-case tracking-normal font-normal border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
@@ -95,9 +103,12 @@
             <li><a href="elements.html">Elements</a></li>
           </ul>
         </details>
+        <!-- ===== END PHONE MENU ===== -->
       </div>
     </nav>
+    <!-- ===== END NAV ===== -->
 
+    <!-- ===== PAGE HEADER ===== -->
     <header class="relative overflow-hidden bg-base-200 py-16 md:py-24 border-b border-base-content/10">
       <div class="page-header-photo" aria-hidden="true"></div>
       <div class="relative max-w-6xl mx-auto px-6">
@@ -106,8 +117,10 @@
         <p class="text-lg max-w-xl">One sentence about this year's squad. How many, how young, what is new.</p>
       </div>
     </header>
+    <!-- ===== END PAGE HEADER ===== -->
 
     <main id="main" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+      <!-- ===== PLAYERS ===== -->
       <!-- REAL FACES: a photo of anyone under 18 needs their yes and the
            school's. If either is no, keep the number, as these cards do. -->
       <section class="mb-24">
@@ -203,7 +216,9 @@
           </article>
         </div>
       </section>
+      <!-- ===== END PLAYERS ===== -->
 
+      <!-- ===== COACHES ===== -->
       <section class="mb-24">
         <h2 class="font-display text-4xl font-bold uppercase mb-8">Coaches</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -245,8 +260,10 @@
           </article>
         </div>
       </section>
+      <!-- ===== END COACHES ===== -->
 
-      <!-- JOIN US: tell next season's players how to try out, or delete this. -->
+      <!-- ===== JOIN US ===== -->
+      <!-- Tell next season's players how to try out, or delete this. -->
       <section class="rounded-box bg-base-200 p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div class="md:col-span-2">
           <h2 class="font-display text-3xl md:text-4xl font-bold uppercase mb-3">Want to play?</h2>
@@ -254,9 +271,11 @@
         </div>
         <a class="btn btn-primary btn-lg md:justify-self-end" href="mailto:coach@example.com"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> Email the coach</a>
       </section>
+      <!-- ===== END JOIN US ===== -->
     </main>
 
-    <!-- SPONSORS: real names only. None? Delete the band. -->
+    <!-- ===== SPONSORS ===== -->
+    <!-- Real names only. None? Delete the band. -->
     <section class="bg-base-200 border-y border-base-content/10" aria-label="Sponsors">
       <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
         <h2 class="text-xs font-bold uppercase tracking-widest w-full sm:w-auto text-center">With thanks to</h2>
@@ -266,7 +285,9 @@
         <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor Four</span>
       </div>
     </section>
+    <!-- ===== END SPONSORS ===== -->
 
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-base-300 text-base-content">
       <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
@@ -299,7 +320,8 @@
             <p><a class="link link-hover" href="schedule.html#venue">Your Field, Your City</a></p>
           </address>
         </div>
-        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+        <!-- ===== SIGNUP ===== -->
+        <!-- Says thank you without sending (data-demo). Point action at
              a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">Game-day reminders</h2>
@@ -311,9 +333,11 @@
           <p class="text-sm opacity-80 mt-2">The day before every home game.</p>
           <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — see you Friday.</p>
         </form>
+        <!-- ===== END SIGNUP ===== -->
       </div>
 
-      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+      <!-- ===== CREDITS ===== -->
+      <!-- Creator, source, license and changes for every borrowed thing.
            Swap a picture, swap its line. A photo of a minor needs permission first. -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
@@ -336,9 +360,12 @@
           </details>
         </div>
       </div>
+      <!-- ===== END CREDITS ===== -->
     </footer>
+    <!-- ===== END FOOTER ===== -->
 
-    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- Hidden until js/site.js shows it, once you have scrolled. -->
     <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
 
     <script src="js/site.js"></script>

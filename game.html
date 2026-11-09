@@ -24,7 +24,8 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <!-- THE TICKER: the next match and the last result, above the nav. Change
+    <!-- ===== TICKER ===== -->
+    <!-- The next match and the last result, above the nav. Change
          it every week, or delete it. On a phone it scrolls sideways. -->
     <aside class="bg-neutral text-neutral-content text-sm" aria-label="This week">
       <div class="px-4 md:px-8 py-2 flex items-center gap-6 md:gap-10 overflow-x-auto whitespace-nowrap">
@@ -33,8 +34,10 @@
         <p class="shrink-0"><span class="badge badge-sm font-bold uppercase mr-2">Table</span>0th of 00 · 00 points</p>
       </div>
     </aside>
+    <!-- ===== END TICKER ===== -->
 
-    <!-- THE NAV: a full-width bar in the team color. It is on every page:
+    <!-- ===== NAV ===== -->
+    <!-- A full-width bar in the team color. It is on every page:
          change one, change all. -->
     <nav data-sticky-nav class="navbar bg-primary text-primary-content sticky top-0 z-30 px-4 md:px-8 shadow-lg" aria-label="Main">
       <div class="navbar-start w-auto shrink-0">
@@ -46,7 +49,8 @@
         </a>
       </div>
       <div class="navbar-end flex-1 w-auto gap-2">
-        <!-- HOMES: each home page has its own hero. Keep the one you like best
+        <!-- ===== HOMES MENU (wide screens) ===== -->
+        <!-- Each home page has its own hero. Keep the one you like best
              as index.html, then delete the rest and this dropdown. -->
         <details class="dropdown dropdown-end hidden lg:block">
           <summary class="btn btn-ghost text-inherit font-display text-lg font-normal uppercase tracking-wide gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -76,12 +80,16 @@
             </ul>
           </div>
         </details>
+        <!-- ===== END HOMES MENU (wide screens) ===== -->
+        <!-- ===== LINKS (wide screens) ===== -->
         <ul class="menu menu-horizontal hidden lg:flex gap-1 font-display text-lg uppercase tracking-wide">
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="roster.html">Roster</a></li>
           <li><a href="elements.html">Elements</a></li>
         </ul>
+        <!-- ===== END LINKS (wide screens) ===== -->
         <a class="btn btn-neutral btn-sm md:btn-md" href="schedule.html#tickets"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
+        <!-- ===== PHONE MENU ===== -->
         <details class="dropdown dropdown-end lg:hidden">
           <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
           <ul class="menu dropdown-content bg-base-100 text-base-content normal-case tracking-normal font-normal border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
@@ -95,10 +103,13 @@
             <li><a href="elements.html">Elements</a></li>
           </ul>
         </details>
+        <!-- ===== END PHONE MENU ===== -->
       </div>
     </nav>
+    <!-- ===== END NAV ===== -->
 
-    <!-- THE SCOREBOARD: a match report opens on the result. The h1 names the
+    <!-- ===== SCOREBOARD ===== -->
+    <!-- A match report opens on the result. The h1 names the
          game; the crests and the big numbers give the score at a glance. -->
     <header class="relative overflow-hidden bg-base-200 py-14 md:py-20 border-b border-base-content/10">
       <div class="page-header-photo" aria-hidden="true"></div>
@@ -123,10 +134,11 @@
         </p>
       </div>
     </header>
+    <!-- ===== END SCOREBOARD ===== -->
 
     <main id="main">
-      <!-- ============================================================ THE STORY
-           The report itself, beside the facts a fan checks first: the score by
+      <!-- ===== THE STORY ===== -->
+      <!-- The report itself, beside the facts a fan checks first: the score by
            period, and who was best. -->
       <div class="max-w-6xl mx-auto px-6 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-3 gap-12">
         <article class="lg:col-span-2">
@@ -142,7 +154,8 @@
         </article>
 
         <aside class="space-y-8" aria-label="The facts">
-          <!-- SCORE BY PERIOD: halves here. Quarters, rounds or sets: one column
+          <!-- ===== SCORE BY PERIOD ===== -->
+          <!-- Halves here. Quarters, rounds or sets: one column
                each. -->
           <div class="overflow-x-auto rounded-box border border-base-content/10" data-reveal>
             <table class="table">
@@ -161,8 +174,10 @@
               </tbody>
             </table>
           </div>
+          <!-- ===== END SCORE BY PERIOD ===== -->
 
-          <!-- PLAYER OF THE MATCH: the number, not the face, unless they and the
+          <!-- ===== PLAYER OF THE MATCH ===== -->
+          <!-- The number, not the face, unless they and the
                school have said yes. -->
           <section class="card bg-base-200 overflow-hidden" aria-labelledby="potm-title" data-reveal>
             <div class="player-number grid place-items-center aspect-[2/1]">
@@ -174,11 +189,13 @@
               <p class="opacity-80">One sentence on why. Something you saw, not something you felt.</p>
             </div>
           </section>
+          <!-- ===== END PLAYER OF THE MATCH ===== -->
         </aside>
       </div>
+      <!-- ===== END THE STORY ===== -->
 
-      <!-- ============================================================ KEY MOMENTS
-           Goals, cards, changes: whatever turned the game, in order. Each minute
+      <!-- ===== KEY MOMENTS ===== -->
+      <!-- Goals, cards, changes: whatever turned the game, in order. Each minute
            is a <time> whose datetime is a duration: PT12M is twelve minutes in.
            data-side="away" puts a moment on the right, theirs. -->
       <section class="bg-base-200 border-y border-base-content/10" aria-labelledby="moments-title">
@@ -230,9 +247,10 @@
           </ol>
         </div>
       </section>
+      <!-- ===== END KEY MOMENTS ===== -->
 
-      <!-- ============================================================ THE NUMBERS
-           Team stats as two bars that meet in the middle, and who played. -->
+      <!-- ===== THE NUMBERS ===== -->
+      <!-- Team stats as two bars that meet in the middle, and who played. -->
       <div class="max-w-6xl mx-auto px-6 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-5 gap-12">
         <section class="lg:col-span-3" aria-labelledby="stats-title">
           <h2 id="stats-title" class="font-display text-4xl font-bold uppercase mb-2">Team stats</h2>
@@ -309,10 +327,11 @@
           </div>
         </section>
       </div>
+      <!-- ===== END THE NUMBERS ===== -->
 
       <div class="bg-base-200 border-t border-base-content/10">
-      <!-- ============================================================ HIGHLIGHTS
-           A video and the best action shots in one lightbox: open any of them and
+      <!-- ===== HIGHLIGHTS ===== -->
+      <!-- A video and the best action shots in one lightbox: open any of them and
            the arrows step through the rest. The video's link goes to YouTube, so
            with no script it still plays there. Pick photos where the action is
            the subject, not somebody's face, and credit every one. -->
@@ -340,11 +359,12 @@
           <a class="group block overflow-hidden rounded-box" href="img/crowd.jpg" data-reveal><img class="w-full aspect-[4/3] object-cover transition duration-500 group-hover:scale-105" src="img/crowd.jpg" width="1200" height="900" loading="lazy" alt="A full home stand under the lights" /></a>
         </div>
       </section>
+      <!-- ===== END HIGHLIGHTS ===== -->
       </div>
     </main>
 
-    <!-- ============================================================ NEXT
-         The same ask as every page: the next game. The countdown stays hidden
+    <!-- ===== NEXT ===== -->
+    <!-- The same ask as every page: the next game. The countdown stays hidden
          until data-countdown is a real date. -->
     <section class="bg-primary text-primary-content px-6 py-20 md:py-24">
       <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -355,7 +375,8 @@
         </div>
         <div class="grid gap-5 md:justify-items-end">
           <div class="text-base-content">
-          <!-- THE COUNTDOWN: js/countdown.js counts down to data-countdown, the
+          <!-- ===== COUNTDOWN ===== -->
+          <!-- js/countdown.js counts down to data-countdown, the
                same moment as the <time> beside it. It stays hidden while the
                date is a placeholder; write the real one in both. -->
           <div class="game-countdown" data-countdown="20XX-10-04T19:00" hidden aria-hidden="true">
@@ -364,13 +385,16 @@
             <span data-unit-box><span data-unit="minutes">00</span><small>Min</small></span>
             <span data-unit-box><span data-unit="seconds">00</span><small>Sec</small></span>
           </div>
+          <!-- ===== END COUNTDOWN ===== -->
           </div>
           <a class="btn btn-lg btn-neutral" href="schedule.html#tickets"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Get tickets</a>
         </div>
       </div>
     </section>
+    <!-- ===== END NEXT ===== -->
 
-    <!-- SPONSORS: real names only. None? Delete the band. -->
+    <!-- ===== SPONSORS ===== -->
+    <!-- Real names only. None? Delete the band. -->
     <section class="bg-base-200 border-y border-base-content/10" aria-label="Sponsors">
       <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
         <h2 class="text-xs font-bold uppercase tracking-widest w-full sm:w-auto text-center">With thanks to</h2>
@@ -380,7 +404,9 @@
         <span class="font-display text-xl font-bold uppercase opacity-80">Sponsor Four</span>
       </div>
     </section>
+    <!-- ===== END SPONSORS ===== -->
 
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-base-300 text-base-content">
       <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
@@ -413,7 +439,8 @@
             <p><a class="link link-hover" href="schedule.html#venue">Your Field, Your City</a></p>
           </address>
         </div>
-        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+        <!-- ===== SIGNUP ===== -->
+        <!-- Says thank you without sending (data-demo). Point action at
              a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">Game-day reminders</h2>
@@ -425,9 +452,11 @@
           <p class="text-sm opacity-80 mt-2">The day before every home game.</p>
           <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — see you Friday.</p>
         </form>
+        <!-- ===== END SIGNUP ===== -->
       </div>
 
-      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+      <!-- ===== CREDITS ===== -->
+      <!-- Creator, source, license and changes for every borrowed thing.
            Swap a picture, swap its line. A photo of a minor needs permission first. -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
@@ -450,9 +479,12 @@
           </details>
         </div>
       </div>
+      <!-- ===== END CREDITS ===== -->
     </footer>
+    <!-- ===== END FOOTER ===== -->
 
-    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- Hidden until js/site.js shows it, once you have scrolled. -->
     <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
 
     <script src="js/site.js"></script>

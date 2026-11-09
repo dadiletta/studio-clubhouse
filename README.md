@@ -47,7 +47,10 @@ AGENTS.md          what AI help may and may not do on this project
    the part after `v=` in a YouTube URL. Swap the poster photograph in
    `styles.css` to match, then fix both credits in the footer. Then set
    `data-start` and `data-end` to the seconds you want it to loop between.
-5. Replace the words. Every one of them. Then the photographs.
+5. Replace the words. Every one of them. Then the photographs. Each part of
+   a page opens and closes with a label, like `<!-- ===== HERO ===== -->` and
+   `<!-- ===== END HERO ===== -->`, and `styles.css` is labeled the same way.
+   Search for one (Ctrl+F, or Cmd+F on a Mac) to jump to it.
 6. Commit as you go. Push at least once a session — a commit is local until you
    push it.
 
